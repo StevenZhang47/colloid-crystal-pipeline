@@ -1,0 +1,241 @@
+{
+  "single_cscl": {
+    "n_particles": 900,
+    "nn": 208.8,
+    "n_ordered": 900,
+    "n_domains": 1,
+    "domains": [
+      {
+        "domain": "d0",
+        "n": 900,
+        "ls": 0.931,
+        "bragg_coherence": 0.51,
+        "centroid": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "matched": "CsCl",
+        "nearest": "CsCl",
+        "verdict": "matched",
+        "D_best": 0.1715,
+        "margin": 3.897,
+        "ranking": {
+          "CsCl": 0.172,
+          "Th3P4": 0.875,
+          "Cu3Au": 1.225,
+          "Ni3Sn": 0.871,
+          "zangenite": 0.668,
+          "Cr3Si_A15": 0.991,
+          "rocksalt_B1": 1.39
+        }
+      }
+    ],
+    "relations": [],
+    "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/results/motif_pipeline/mixed_domain_diagnostics_v1/test_gsds/single_cscl.gsd"
+  },
+  "single_th3p4": {
+    "n_particles": 900,
+    "nn": 209.9,
+    "n_ordered": 899,
+    "n_domains": 1,
+    "domains": [
+      {
+        "domain": "d0",
+        "n": 899,
+        "ls": 0.787,
+        "bragg_coherence": 0.19,
+        "centroid": [
+          -0.0,
+          -0.0,
+          -1.0
+        ],
+        "matched": "Th3P4",
+        "nearest": "Th3P4",
+        "verdict": "matched",
+        "D_best": 0.3311,
+        "margin": 1.804,
+        "ranking": {
+          "CsCl": 0.832,
+          "Th3P4": 0.331,
+          "Cu3Au": 1.092,
+          "Ni3Sn": 0.682,
+          "zangenite": 0.597,
+          "Cr3Si_A15": 0.826,
+          "rocksalt_B1": 0.975
+        }
+      }
+    ],
+    "relations": [],
+    "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/results/motif_pipeline/mixed_domain_diagnostics_v1/test_gsds/single_th3p4.gsd"
+  },
+  "separated_cscl_th3p4": {
+    "n_particles": 1800,
+    "nn": 209.4,
+    "n_ordered": 1799,
+    "n_domains": 2,
+    "domains": [
+      {
+        "domain": "d0",
+        "n": 900,
+        "ls": 0.931,
+        "bragg_coherence": 0.51,
+        "centroid": [
+          -2167.0,
+          -0.0,
+          0.0
+        ],
+        "matched": "CsCl",
+        "nearest": "CsCl",
+        "verdict": "matched",
+        "D_best": 0.1715,
+        "margin": 3.897,
+        "ranking": {
+          "CsCl": 0.172,
+          "Th3P4": 0.875,
+          "Cu3Au": 1.225,
+          "Ni3Sn": 0.871,
+          "zangenite": 0.668,
+          "Cr3Si_A15": 0.991,
+          "rocksalt_B1": 1.39
+        }
+      },
+      {
+        "domain": "d1",
+        "n": 899,
+        "ls": 0.787,
+        "bragg_coherence": 0.2,
+        "centroid": [
+          2167.0,
+          -0.0,
+          -1.0
+        ],
+        "matched": "Th3P4",
+        "nearest": "Th3P4",
+        "verdict": "matched",
+        "D_best": 0.3276,
+        "margin": 1.814,
+        "ranking": {
+          "CsCl": 0.835,
+          "Th3P4": 0.328,
+          "Cu3Au": 1.095,
+          "Ni3Sn": 0.684,
+          "zangenite": 0.594,
+          "Cr3Si_A15": 0.829,
+          "rocksalt_B1": 0.979
+        }
+      }
+    ],
+    "relations": [
+      {
+        "a": "d0",
+        "b": "d1",
+        "min_distance": 1829.9,
+        "relation": "separated"
+      }
+    ],
+    "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/results/motif_pipeline/mixed_domain_diagnostics_v1/test_gsds/separated_cscl_th3p4.gsd"
+  },
+  "attached_cscl_th3p4": {
+    "n_particles": 1800,
+    "nn": 209.4,
+    "n_ordered": 1799,
+    "n_domains": 2,
+    "domains": [
+      {
+        "domain": "d0.0",
+        "n": 899,
+        "ls": 0.787,
+        "bragg_coherence": 0.2,
+        "centroid": [
+          1357.0,
+          -0.0,
+          -1.0
+        ],
+        "matched": "Th3P4",
+        "nearest": "Th3P4",
+        "verdict": "matched",
+        "D_best": 0.3276,
+        "margin": 1.814,
+        "ranking": {
+          "CsCl": 0.835,
+          "Th3P4": 0.328,
+          "Cu3Au": 1.095,
+          "Ni3Sn": 0.684,
+          "zangenite": 0.594,
+          "Cr3Si_A15": 0.829,
+          "rocksalt_B1": 0.979
+        }
+      },
+      {
+        "domain": "d0.1",
+        "n": 899,
+        "ls": 0.933,
+        "bragg_coherence": 0.51,
+        "centroid": [
+          -1356.0,
+          0.0,
+          -0.0
+        ],
+        "matched": "CsCl",
+        "nearest": "CsCl",
+        "verdict": "matched",
+        "D_best": 0.1706,
+        "margin": 3.917,
+        "ranking": {
+          "CsCl": 0.171,
+          "Th3P4": 0.876,
+          "Cu3Au": 1.225,
+          "Ni3Sn": 0.871,
+          "zangenite": 0.668,
+          "Cr3Si_A15": 0.991,
+          "rocksalt_B1": 1.389
+        }
+      }
+    ],
+    "relations": [
+      {
+        "a": "d0.0",
+        "b": "d0.1",
+        "min_distance": 218.2,
+        "relation": "attached"
+      }
+    ],
+    "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/results/motif_pipeline/mixed_domain_diagnostics_v1/test_gsds/attached_cscl_th3p4.gsd"
+  },
+  "gas_plus_cscl": {
+    "n_particles": 1276,
+    "nn": 209.1,
+    "n_ordered": 900,
+    "n_domains": 1,
+    "domains": [
+      {
+        "domain": "d0",
+        "n": 900,
+        "ls": 0.931,
+        "bragg_coherence": 0.51,
+        "centroid": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "matched": "CsCl",
+        "nearest": "CsCl",
+        "verdict": "matched",
+        "D_best": 0.1715,
+        "margin": 3.897,
+        "ranking": {
+          "CsCl": 0.172,
+          "Th3P4": 0.875,
+          "Cu3Au": 1.225,
+          "Ni3Sn": 0.871,
+          "zangenite": 0.668,
+          "Cr3Si_A15": 0.991,
+          "rocksalt_B1": 1.39
+        }
+      }
+    ],
+    "relations": [],
+    "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/results/motif_pipeline/mixed_domain_diagnostics_v1/test_gsds/gas_plus_cscl.gsd"
+  }
+}

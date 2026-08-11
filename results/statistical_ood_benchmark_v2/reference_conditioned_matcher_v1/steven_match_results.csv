@@ -1,0 +1,3 @@
+candidate,ls,selected,verdict,matched,nearest,D_best,margin,D_CsCl,D_Th3P4,D_Cu3Au,D_Ni3Sn,D_zangenite,D_Cr3Si_A15,D_rocksalt_B1
+steven_example_1,0.364,480,matched,Ni3Sn,Ni3Sn,0.3475,1.856,0.9892,0.713,0.8092,0.3475,0.645,0.7712,1.2041
+steven_example_2,0.333,500,matched,Cu3Au,Cu3Au,0.3726,1.932,1.0473,1.0643,0.3726,0.7197,1.0816,0.9665,1.1494

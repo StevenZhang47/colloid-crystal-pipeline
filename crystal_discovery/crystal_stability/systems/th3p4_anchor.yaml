@@ -1,0 +1,44 @@
+# th3p4_anchor: designed by design.py.
+# P = small (+) colloid on the majority site; Th = large (-) colloid.
+# lambda_D solved so the unlike-pair well is -5.0 kT (the regime CsCl and Cu3Au held in).
+# weakest species P held at -24.4 kT (CsCl, which survives, holds both at about -25 kT).
+name: th3p4_anchor
+cif: th3p4_anchor.cif
+lattice_repeats: 8
+types:
+  P:
+    radius_nm: 102.0
+    mass_dalton: 1.884998982291879
+    surface_potential_mV: 5.0
+  Th:
+    radius_nm: 120.0
+    mass_dalton: 1.0
+    surface_potential_mV: -25.0
+debye_length_nm: 17.92
+potential_temperature_K: 298.0
+brush_length_nm: 10.0
+brush_density_per_nm2: 0.09
+dielectric_constant: 80.0
+cutoff_factor: 21.0
+radii_padding_nm: 15.0
+lattice_padding_nm: 1000.0
+optimize_energy: true
+energy_scale_range:
+- 0.5
+- 1.5
+energy_scale_samples: 50
+start_temperature_K: 30.0
+ramp_steps: 200000
+run_steps: 500000
+n_frames: 500
+timestep_ps: 0.3
+friction_per_ps: 1.0
+seed: 1
+use_gravity: true
+particle_density_g_per_cm3: 1.05
+water_density_g_per_cm3: 0.998
+walls:
+- true
+- true
+- true
+platform: CUDA

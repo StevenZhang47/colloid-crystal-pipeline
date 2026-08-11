@@ -1,0 +1,117 @@
+# ALLOWLIST .gitignore.
+#
+# This working tree is ~7 GB of simulation output with code scattered through it, and it
+# holds material that must not be published. So the default is to ignore EVERYTHING and
+# re-admit named code paths one at a time. A stray `git add .` therefore cannot sweep in
+# trajectories, caches, credentials, or sealed data.
+#
+# To add a new code directory, add a `!path/` line for each parent directory and then a
+# `!path/*.py` line. Git will not descend into an excluded directory, so every parent on
+# the way down has to be un-ignored explicitly.
+
+*
+
+# ---------------------------------------------------------------- always excluded
+# Sealed: the Steven <-> prototype mapping is held out of the analysis by design.
+crystal_discovery/crystal_stability/library_stability.csv
+
+# Simulation output, model checkpoints and caches: large, regenerable, not source.
+*.gsd
+*.npz
+*.pt
+*.chk
+*.pkl
+**/runs/
+**/cache/
+**/logs/
+**/__pycache__/
+
+# Credentials and scratch. Never publish.
+*.key
+*.pem
+.credentials.json
+claude_tmp/
+conda_storage/
+pip_cache/
+tmp_pip/
+home_apps/
+home_backups/
+opt/
+
+# ---------------------------------------------------------------- admitted: root docs
+!.gitignore
+!README.md
+!AI_AGENT.md
+
+# ---------------------------------------------------------------- CIF library
+!crystal_discovery/
+!crystal_discovery/cif_library/
+!crystal_discovery/cif_library/*.py
+!crystal_discovery/cif_library/*.md
+!crystal_discovery/cif_library/*.csv
+!crystal_discovery/cif_library/*.sbatch
+!crystal_discovery/cif_library/prototypes/
+!crystal_discovery/cif_library/prototypes/*.cif
+
+# ---------------------------------------------------------------- crystal builder
+!crystal_discovery/crystal_stability/
+!crystal_discovery/crystal_stability/*.py
+!crystal_discovery/crystal_stability/*.md
+!crystal_discovery/crystal_stability/*.sh
+!crystal_discovery/crystal_stability/*.sbatch
+!crystal_discovery/crystal_stability/systems/
+!crystal_discovery/crystal_stability/systems/*.yaml
+!crystal_discovery/crystal_stability/structures/
+!crystal_discovery/crystal_stability/structures/*.cif
+
+# ---------------------------------------------------------------- frozen gas screen
+!crystal_discovery/preprocessing_pipeline_final/
+!crystal_discovery/preprocessing_pipeline_final/unified_pipeline/
+!crystal_discovery/preprocessing_pipeline_final/unified_pipeline/scripts/
+!crystal_discovery/preprocessing_pipeline_final/unified_pipeline/scripts/gas_screen_v1/
+!crystal_discovery/preprocessing_pipeline_final/unified_pipeline/scripts/gas_screen_v1/*.py
+
+# ---------------------------------------------------------------- pipeline stages
+!results/
+!results/motif_pipeline/
+!results/motif_pipeline/frozen_gas_m3_pipeline_v1/
+!results/motif_pipeline/frozen_gas_m3_pipeline_v1/*.py
+!results/motif_pipeline/frozen_gas_m3_pipeline_v1/*.md
+!results/motif_pipeline/frozen_gas_m3_pipeline_v1/*.csv
+
+!results/motif_pipeline/soap_atlas_core3_phase2_v1/
+!results/motif_pipeline/soap_atlas_core3_phase2_v1/scripts/
+!results/motif_pipeline/soap_atlas_core3_phase2_v1/scripts/*.py
+
+!results/motif_pipeline/core3_atlas_v3/
+!results/motif_pipeline/core3_atlas_v3/scripts/
+!results/motif_pipeline/core3_atlas_v3/scripts/*.py
+!results/motif_pipeline/core3_atlas_v3/scripts/*.sbatch
+!results/motif_pipeline/core3_atlas_v3/reports/
+!results/motif_pipeline/core3_atlas_v3/reports/*.md
+
+# ---------------------------------------------------------------- matcher
+!results/statistical_ood_benchmark_v2/
+!results/statistical_ood_benchmark_v2/matcher_v2_corrected_rdf/
+!results/statistical_ood_benchmark_v2/matcher_v2_corrected_rdf/*.py
+!results/statistical_ood_benchmark_v2/matcher_v3_validated_structure_factor/
+!results/statistical_ood_benchmark_v2/matcher_v3_validated_structure_factor/*.py
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/*.py
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/*.md
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/*.sbatch
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/*.csv
+!results/statistical_ood_benchmark_v2/reference_conditioned_matcher_v1/*.json
+
+# ---------------------------------------------------------------- preregistration
+# Documents only. The 199 MB graph cache under this directory stays excluded.
+!results/final_architecture_decision_v1/
+!results/final_architecture_decision_v1/*.md
+!results/final_architecture_decision_v1/*.txt
+
+# ---------------------------------------------------------------- manuscript
+!manuscript/
+!manuscript/**/
+!manuscript/**/*.tex
+!manuscript/**/*.md
+!manuscript/**/*.bib

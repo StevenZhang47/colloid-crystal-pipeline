@@ -1,0 +1,35 @@
+\section{Introduction}
+\label{sec:intro}
+
+Molecular-dynamics studies of colloidal self-assembly readily generate more structural data
+than can be assigned by hand. A single parameter sweep produces thousands of configurations,
+many containing several coexisting phases, partially ordered regions, or structures that
+were not anticipated when the study was designed. Assigning a structural label to every
+domain is a prerequisite for mapping a phase diagram, and it does not scale manually.
+
+Established approaches address parts of this problem. Bond-orientational order parameters
+characterise local environments and underpin much of the crystal-detection literature
+\TODO{VERIFY CITATION: Steinhardt et al.}, with averaged variants improving robustness to
+thermal noise \TODO{VERIFY CITATION: Lechner and Dellago}. Supervised classifiers trained on
+labelled environments perform well when the classes are known in advance
+\TODO{VERIFY CITATION}. Unsupervised methods discover recurring local environments without
+labels \TODO{VERIFY CITATION: Boattini et al.; Reinhart et al.}. Fixed descriptors such as
+the smooth overlap of atomic positions provide a general-purpose representation of local
+structure \TODO{VERIFY CITATION: Bartok et al.; DScribe}.
+
+A workflow intended to operate on data containing genuinely unfamiliar structures needs
+several properties that these components do not supply on their own. It must resolve a
+heterogeneous frame into spatial domains before assigning structure, since a descriptor
+averaged over two coexisting phases describes neither. It must distinguish domains that
+resemble the training atlas from those that do not, rather than assigning every domain to
+its nearest known class. When a domain is unfamiliar, it must be comparable against
+physically interpretable references rather than only against the training data. And it must
+be able to report that no reference is compatible, instead of forcing a choice.
+
+We investigate such a workflow for binary colloidal crystals. The components are individually
+standard; what we examine is whether they compose into a system that detects structures from
+families absent at training time, identifies them against an independent reference library
+built from crystallographic prototypes, and abstains when the correct reference is
+unavailable. We report where this succeeds and where it does not: in particular, the
+acceptance threshold is the least stable element of the detector, and the expansion stage of
+the workflow is set up but not demonstrated.

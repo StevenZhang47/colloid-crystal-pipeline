@@ -1,0 +1,11 @@
+# Generated training data (regenerate with build_training_set.py)
+training_set.csv
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.joblib
+
+# Jupyter
+.ipynb_checkpoints/

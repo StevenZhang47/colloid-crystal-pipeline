@@ -1,0 +1,82 @@
+{
+  "runtime_seconds": 192.8,
+  "n_anchors": 37,
+  "per_family": {
+    "CsCl": {
+      "self_match_correct": "6/6",
+      "d_self_range": [
+        0.0975,
+        0.098
+      ],
+      "d_nearest_other_prototype": [
+        0.4262,
+        0.4264
+      ],
+      "separation_ratio_min": 4.35,
+      "holdout_nearest_prototype": [
+        "Th3P4"
+      ],
+      "holdout_margin_range": [
+        1.007,
+        1.008
+      ]
+    },
+    "Cu3Au": {
+      "self_match_correct": "6/6",
+      "d_self_range": [
+        0.1198,
+        0.1227
+      ],
+      "d_nearest_other_prototype": [
+        0.2344,
+        0.2426
+      ],
+      "separation_ratio_min": 1.911,
+      "holdout_nearest_prototype": [
+        "al3ti_d022"
+      ],
+      "holdout_margin_range": [
+        1.02,
+        1.025
+      ]
+    },
+    "Ni3Sn": {
+      "self_match_correct": "6/6",
+      "d_self_range": [
+        0.088,
+        0.0919
+      ],
+      "d_nearest_other_prototype": [
+        0.1897,
+        0.1926
+      ],
+      "separation_ratio_min": 2.064,
+      "holdout_nearest_prototype": [
+        "al3ti_d022"
+      ],
+      "holdout_margin_range": [
+        1.362,
+        1.396
+      ]
+    },
+    "Th3P4": {
+      "self_match_correct": "6/6",
+      "d_self_range": [
+        0.1226,
+        0.1245
+      ],
+      "d_nearest_other_prototype": [
+        0.3242,
+        0.3256
+      ],
+      "separation_ratio_min": 2.61,
+      "holdout_nearest_prototype": [
+        "zangenite"
+      ],
+      "holdout_margin_range": [
+        1.145,
+        1.153
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+slug,prototype,strukturbericht,search_formula,expected_spacegroup,expected_ratio,n_spacegroup_matches,mp_id,energy_above_hull,n_polymorphs_considered,formula,spacegroup_symbol,spacegroup_number,crystal_system,large_small_ratio,n_sites,a,b_over_a,c_over_a,n_free_lattice_params,requires_anisotropic,spacegroup_matches_expected,ratio_matches_expected,status,written
+wurtzite_B4,Wurtzite,B4,ZnS,186,1:1,8,mp-560588,0.003044368214284887,146,ZnS,P6_3mc,186,hexagonal,1:1,4,3.8058,1.0,1.6391,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/wurtzite_B4.cif
+wc_Bh,WC,B_h,WC,187,1:1,1,mp-1894,0.0,4,WC,P-6m2,187,hexagonal,1:1,2,2.9166,1.0,0.9735,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/wc_Bh.cif
+fesi_B20,FeSi,B20,FeSi,198,1:1,1,mp-871,0.0,1,FeSi,P2_13,198,cubic,1:1,8,4.4022,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/fesi_B20.cif
+mnp_B31,MnP,B31,MnP,62,1:1,1,mp-2662,0.0,3,MnP,Pnma,62,orthorhombic,1:1,8,3.2177,1.6021,1.8013,3,True,True,True,OK,crystal_discovery/cif_library/prototypes/mnp_B31.cif
+natl_B32,NaTl,B32,NaTl,227,1:1,1,mp-1564,0.0,4,NaTl,Fd-3m,227,cubic,1:1,4,5.2882,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/natl_B32.cif
+cuau_L10,CuAu,L1_0,CuAu,123,1:1,1,mp-522,0.0,3,CuAu,P4/mmm,123,tetragonal,1:1,4,3.5816,1.1256,1.1256,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/cuau_L10.cif
+rutile_C4,Rutile,C4,TiO2,136,1:2,1,mp-2657,0.04363870416666593,46,TiO2,P4_2/mnm,136,tetragonal,1:2,12,5.4695,1.0,1.0,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/rutile_C4.cif
+anatase_C5,Anatase,C5,TiO2,141,1:2,1,mp-390,0.0,46,TiO2,I4_1/amd,141,tetragonal,1:2,6,3.7825,1.0,1.4544,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/anatase_C5.cif
+pyrite_C2,Pyrite,C2,FeS2,205,1:2,1,mp-226,0.010058665833334146,8,FeS2,Pa-3,205,cubic,1:2,12,5.3968,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/pyrite_C2.cif
+cuprite_C3,Cuprite,C3,Cu2O,224,1:2,1,mp-361,0.0,1,Cu2O,Pn-3m,224,cubic,1:2,6,4.2467,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/cuprite_C3.cif
+alb2_C32,AlB2,C32,AlB2,191,1:2,1,mp-944,0.01683494079999992,1,AlB2,P6/mmm,191,hexagonal,1:2,3,2.9914,1.0,1.0906,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/alb2_C32.cif
+cdi2_C6,CdI2,C6,CdI2,164,1:2,9,mp-567259,0.0005410511111105798,123,CdI2,P-3m1,164,trigonal,1:2,3,4.291,1.0,1.7021,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/cdi2_C6.cif
+laves_C14_MgZn2,Laves C14,C14,MgZn2,194,1:2,1,mp-1124,0.0,17,MgZn2,P6_3/mmc,194,hexagonal,1:2,12,5.1568,1.0,1.6236,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/laves_C14_MgZn2.cif
+laves_C15_MgCu2,Laves C15,C15,MgCu2,227,1:2,1,mp-1038,0.0,1,MgCu2,Fd-3m,227,cubic,1:2,6,4.9231,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/laves_C15_MgCu2.cif
+laves_C36_MgNi2,Laves C36,C36,MgNi2,194,1:2,1,mp-2675,0.0,3,MgNi2,P6_3/mmc,194,hexagonal,1:2,24,4.7539,1.0,3.2899,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/laves_C36_MgNi2.cif
+mosi2_C11b,MoSi2,C11b,MoSi2,139,1:2,1,mp-2592,0.0,2,Si2Mo,I4/mmm,139,tetragonal,1:2,3,3.2043,1.0,1.4098,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/mosi2_C11b.cif
+al3ti_D022,Al3Ti,D0_22,Al3Ti,139,1:3,1,mp-542915,0.0,3,TiAl3,I4/mmm,139,tetragonal,1:3,4,3.8222,1.0,1.3245,2,True,True,True,OK,crystal_discovery/cif_library/prototypes/al3ti_D022.cif
+bif3_D03,BiF3,D0_3,BiF3,225,1:3,1,mp-23301,0.2708216324999997,4,BiF3,Fm-3m,225,cubic,1:3,4,4.0765,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/bif3_D03.cif
+cementite_D011,Cementite,D0_11,Fe3C,62,1:3,1,mp-510623,0.05671033062500008,7,Fe3C,Pnma,62,orthorhombic,1:3,16,4.4908,1.1201,1.5007,3,True,True,True,OK,crystal_discovery/cif_library/prototypes/cementite_D011.cif
+spinel_normal_Co3O4,Normal spinel,H1_1,Co3O4,227,3:4,1,mp-18748,0.010479931428569955,4,Co3O4,Fd-3m,227,cubic,3:4,14,5.6893,1.0,1.0,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/spinel_normal_Co3O4.cif
+spinel_inverse_Fe3O4,Inverse spinel,H1_1,Fe3O4,227,3:4,1,mp-19306,0.013059251428572338,30,Fe3O4,Fd-3m,227,cubic,3:4,14,5.9718,0.9997,0.9997,1,False,True,True,OK,crystal_discovery/cif_library/prototypes/spinel_inverse_Fe3O4.cif

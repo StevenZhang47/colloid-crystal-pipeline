@@ -1,0 +1,30 @@
+{
+  "runtime_seconds": 7.4,
+  "families": [
+    "CsCl",
+    "Th3P4",
+    "Cu3Au",
+    "Ni3Sn",
+    "zangenite",
+    "Cr3Si_A15",
+    "rocksalt_B1"
+  ],
+  "cscl_holdout": {
+    "n_trajectories": 23,
+    "full_library_matched_CsCl_rate": 1.0,
+    "cscl_removed_library_unmatched_rate": 1.0
+  },
+  "steven": {
+    "steven_example_1": {
+      "verdict": "matched",
+      "matched": "Ni3Sn",
+      "nearest": "Ni3Sn"
+    },
+    "steven_example_2": {
+      "verdict": "matched",
+      "matched": "Cu3Au",
+      "nearest": "Cu3Au"
+    }
+  },
+  "calibration": "per-family thermal envelope from own crystal_stability trajectory; quantile 0.90 x 1.30; conservative max-rho; stoich gate tol 0.15"
+}

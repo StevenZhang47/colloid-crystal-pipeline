@@ -1,0 +1,7 @@
+frame,non_gas,excluded,expected,centers,match
+single_Zangenite_sphere,943,699,699,244,True
+single_CsCl_sphere,1170,437,437,733,True
+single_CsCl_block,686,255,255,431,True
+single_Th3P4_sphere,1000,395,395,605,True
+single_fluorite_sphere,885,306,306,579,True
+single_Ni3Sn_block,676,308,308,368,True

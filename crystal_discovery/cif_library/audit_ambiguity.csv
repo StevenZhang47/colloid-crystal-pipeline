@@ -1,0 +1,10 @@
+prototype,cif_a,cif_b,structurally_identical,verdict
+cscl,CsCl,cscl_B2_anchor,False,GENUINELY DIFFERENT STRUCTURE
+cu3au,Cu3Au,Cu3Au_mp-2258_conventional_standard,True,"duplicate file, same structure"
+cu3au,Cu3Au,cu3au_L12,True,"duplicate file, same structure"
+laves,laves_C15_MgCu2,laves_C14_MgZn2,False,GENUINELY DIFFERENT STRUCTURE
+laves,laves_C15_MgCu2,laves_C36_MgNi2,False,GENUINELY DIFFERENT STRUCTURE
+spinel,spinel_inverse_Fe3O4,spinel_normal_Co3O4,False,GENUINELY DIFFERENT STRUCTURE
+th3p4,Th3P4,Th3P4,True,"duplicate file, same structure"
+th3p4,Th3P4,th3p4_anchor,False,GENUINELY DIFFERENT STRUCTURE
+zangenite,zangenite__471e7cda,zangenite__98bb84a4,False,GENUINELY DIFFERENT STRUCTURE

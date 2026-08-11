@@ -1,0 +1,8 @@
+case,domain,n,ls,matched,verdict,D_best,margin,relation
+single_cscl,d0,900,0.931,CsCl,matched,0.1715,3.897,-
+single_th3p4,d0,899,0.787,Th3P4,matched,0.3311,1.804,-
+separated_cscl_th3p4,d0,900,0.931,CsCl,matched,0.1715,3.897,separated
+separated_cscl_th3p4,d1,899,0.787,Th3P4,matched,0.3276,1.814,separated
+attached_cscl_th3p4,d0.0,899,0.787,Th3P4,matched,0.3276,1.814,attached
+attached_cscl_th3p4,d0.1,899,0.933,CsCl,matched,0.1706,3.917,attached
+gas_plus_cscl,d0,900,0.931,CsCl,matched,0.1715,3.897,-

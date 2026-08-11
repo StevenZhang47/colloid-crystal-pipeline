@@ -1,0 +1,5 @@
+# Frozen Phase 0/1 document hashes; created before any study model execution.
+e838bf5aaf4f7cb6afb450abc63b686aef81ac3fdcad8e203c2139ce018b6ad2  source_request_pasted-text.txt
+91a3fe30efc50a74ea4a3abe3ccc3e107438e5220ed3da99ad44d453e571a630  AUDIT.md
+8f00bfdbac68dfa2e5faef2c7c3a92e35d36c2eec29d08259307eec9cd3161b1  DATA_SPLITS.md
+72f7ecc458d7bf4b41900c261d0a68eca33d1e3ec3c2345edcf085367f271192  DECISION_CRITERIA.md

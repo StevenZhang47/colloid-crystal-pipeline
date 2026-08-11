@@ -1,0 +1,22 @@
+{
+  "true_match_D_max": 0.2582,
+  "holdout_false_D_min": 0.359,
+  "safe_window": [
+    0.2582,
+    0.359
+  ],
+  "midpoint": 0.3086,
+  "external": {
+    "external_candidate_1": {
+      "prototype": "Ni3Sn",
+      "D": 0.2778,
+      "margin": 1.983
+    },
+    "external_candidate_2": {
+      "prototype": "Cu3Au",
+      "D": 0.3608,
+      "margin": 1.342
+    }
+  },
+  "current_accept_D": 0.4
+}

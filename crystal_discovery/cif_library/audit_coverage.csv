@@ -1,0 +1,32 @@
+prototype,strukturbericht,example,spacegroup_number,large_small_ratio,have,matched_cif,n_free_lattice_params,requires_anisotropic
+CsCl,B2,CsCl,221,1:1,True,CsCl;cscl_B2_anchor,1,False
+Rocksalt,B1,NaCl,225,1:1,True,rocksalt_B1,1,False
+Zinc blende,B3,ZnS,216,1:1,True,zincblende_B3,1,False
+Wurtzite,B4,ZnS,186,1:1,True,wurtzite_B4,2,True
+NiAs,B8_1,NiAs,194,1:1,True,nickeline_B81,2,True
+WC,B_h,WC,187,1:1,True,wc_Bh,2,True
+FeSi,B20,FeSi,198,1:1,True,fesi_B20,1,False
+MnP,B31,MnP,62,1:1,True,mnp_B31,3,True
+NaTl,B32,NaTl,227,1:1,True,natl_B32,1,False
+CuAu,L1_0,CuAu,123,1:1,True,cuau_L10,2,True
+Fluorite,C1,CaF2,225,1:2,True,antifluorite_C1b;fluorite_C1,1,False
+Antifluorite,C1,Li2O,225,1:2,True,antifluorite_C1b;fluorite_C1,1,False
+Rutile,C4,TiO2,136,1:2,True,rutile_C4,2,True
+Anatase,C5,TiO2,141,1:2,True,anatase_C5,2,True
+Pyrite,C2,FeS2,205,1:2,True,pyrite_C2,1,False
+Cuprite,C3,Cu2O,224,1:2,True,cuprite_C3,1,False
+AlB2,C32,AlB2,191,1:2,True,alb2_C32,2,True
+CdI2,C6,CdI2,164,1:2,True,cdi2_C6,2,True
+Laves C14,C14,MgZn2,194,1:2,True,laves_C14_MgZn2;laves_C36_MgNi2,2,True
+Laves C15,C15,MgCu2,227,1:2,True,laves_C15_MgCu2,1,False
+Laves C36,C36,MgNi2,194,1:2,True,laves_C14_MgZn2;laves_C36_MgNi2,2,True
+MoSi2,C11b,MoSi2,139,1:2,True,mosi2_C11b,2,True
+Cu3Au,L1_2,Cu3Au,221,1:3,True,Cu3Au;Cu3Au_mp-2258_conventional_standard;cu3au_L12;reo3_D09,1,False
+Cr3Si,A15,Cr3Si,223,1:3,True,cr3si_A15,1,False
+Ni3Sn,D0_19,Ni3Sn,194,1:3,True,Li3Fe;ni3sn_D019,2,True
+Al3Ti,D0_22,Al3Ti,139,1:3,True,al3ti_D022,2,True
+BiF3,D0_3,BiF3,225,1:3,True,bif3_D03,1,False
+Cementite,D0_11,Fe3C,62,1:3,True,cementite_D011,3,True
+ReO3,D0_9,ReO3,221,1:3,True,Cu3Au;Cu3Au_mp-2258_conventional_standard;cu3au_L12;reo3_D09,1,False
+Th3P4,D7_3,Th3P4,220,3:4,True,Th3P4;Th3P4;th3p4_anchor,1,False
+Spinel,H1_1,MgAl2O4,227,3:4,True,spinel_inverse_Fe3O4;spinel_normal_Co3O4,1,False

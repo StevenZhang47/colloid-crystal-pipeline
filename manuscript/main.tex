@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,longtable}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+% Red inline marker for anything not yet traced to code or a frozen artifact.
+\newcommand{\TODO}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\Dmah}{d_{\mathrm{M}}}
+\newcommand{\shrink}{\lambda}
+
+\title{Open-World Recognition of Colloidal Crystal Structures\\
+from Molecular-Dynamics Simulations}
+\author{\TODO{author list}}
+\date{Draft --- \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\TODO{Write the abstract last, after Results are settled. It must not claim the
+expansion stage, which is not demonstrated in the present repository.}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_methods}
+\input{sections/03_results}
+\input{sections/04_discussion}
+\input{sections/05_conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\end{document}

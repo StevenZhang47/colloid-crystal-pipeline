@@ -1,0 +1,52 @@
+{
+  "runtime_seconds": 170.7,
+  "n_anchors": 44,
+  "n_candidate_frames": 24,
+  "accept_D": 0.4,
+  "per_family": {
+    "CsCl": {
+      "nearest_is_correct_prototype": "6/6",
+      "prototype_level_matched": "6/6",
+      "strict_matched": "0/6",
+      "max_other_prototype_accepted": 1,
+      "D_best_range": [
+        0.092,
+        0.097
+      ],
+      "prototype_margin_min": 3.763
+    },
+    "Cu3Au": {
+      "nearest_is_correct_prototype": "6/6",
+      "prototype_level_matched": "6/6",
+      "strict_matched": "0/6",
+      "max_other_prototype_accepted": 1,
+      "D_best_range": [
+        0.189,
+        0.191
+      ],
+      "prototype_margin_min": 1.885
+    },
+    "Ni3Sn": {
+      "nearest_is_correct_prototype": "0/6",
+      "prototype_level_matched": "6/6",
+      "strict_matched": "6/6",
+      "max_other_prototype_accepted": 1,
+      "D_best_range": [
+        0.184,
+        0.208
+      ],
+      "prototype_margin_min": 1.237
+    },
+    "Th3P4": {
+      "nearest_is_correct_prototype": "6/6",
+      "prototype_level_matched": "6/6",
+      "strict_matched": "0/6",
+      "max_other_prototype_accepted": 0,
+      "D_best_range": [
+        0.252,
+        0.258
+      ],
+      "prototype_margin_min": 1.946
+    }
+  }
+}

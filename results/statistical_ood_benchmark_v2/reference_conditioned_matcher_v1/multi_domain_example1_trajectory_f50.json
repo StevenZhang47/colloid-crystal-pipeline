@@ -1,0 +1,65 @@
+{
+  "frame": "/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/data/test_set/example1_trajectory.gsd",
+  "n_particles": 27723,
+  "nn": 209.5,
+  "n_ordered": 14531,
+  "n_domains": 2,
+  "domains": [
+    {
+      "domain": "d0",
+      "n": 9730,
+      "ls": 0.976,
+      "centroid": [
+        -4612.0,
+        -4269.0,
+        -4349.0
+      ],
+      "matched": "CsCl",
+      "nearest": "CsCl",
+      "verdict": "matched",
+      "D_best": 0.1195,
+      "margin": 6.366,
+      "ranking": {
+        "CsCl": 0.12,
+        "Th3P4": 0.969,
+        "Cu3Au": 1.126,
+        "Ni3Sn": 0.917,
+        "zangenite": 0.761,
+        "Cr3Si_A15": 0.972,
+        "rocksalt_B1": 1.313
+      }
+    },
+    {
+      "domain": "d1",
+      "n": 4800,
+      "ls": 0.263,
+      "centroid": [
+        4378.0,
+        4057.0,
+        4130.0
+      ],
+      "matched": null,
+      "nearest": "Th3P4",
+      "verdict": "library_unmatched",
+      "D_best": 0.7576,
+      "margin": 1.12,
+      "ranking": {
+        "CsCl": 1.073,
+        "Th3P4": 0.758,
+        "Cu3Au": 1.053,
+        "Ni3Sn": 0.912,
+        "zangenite": 0.848,
+        "Cr3Si_A15": 0.932,
+        "rocksalt_B1": 1.106
+      }
+    }
+  ],
+  "relations": [
+    {
+      "a": "d0",
+      "b": "d1",
+      "min_distance": 9130.1,
+      "relation": "separated"
+    }
+  ]
+}

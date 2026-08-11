@@ -1,0 +1,25 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have assembled and evaluated a workflow that separates colloidal molecular-dynamics
+configurations into spatial domains, represents each with a fixed species-aware descriptor,
+detects domains belonging to structural families absent from its training atlas, and
+compares those domains against an independently constructed reference library that it may
+decline to match.
+
+Under strict leave-one-family-out evaluation, in which every statistical quantity is re-fitted
+without the held-out family, the detector ranks unseen domains above all retained ones for
+each of the three families tested. An external candidate rejected by the detector is
+identified by the matcher against a reference absent from the training atlas. When the
+correct reference is removed from the library, all twenty-three affected domains abstain
+rather than accept the nearest survivor, which sits at a distance typical of an unrelated
+prototype.
+
+Two findings temper this. Admitting provisional machine-generated labels into training
+produced no measurable improvement and degraded threshold stability by a factor of three.
+And the acceptance threshold, rather than the representation, is the least stable component:
+the predeclared calibration rule rejects roughly a quarter of in-distribution validation
+domains, which alternative rules reduce substantially on the same data.
+
+The extension of the atlas to newly identified families is supported by the architecture but
+is not demonstrated here, and we do not claim it.

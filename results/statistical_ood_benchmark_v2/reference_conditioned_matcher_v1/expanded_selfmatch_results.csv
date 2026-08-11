@@ -1,0 +1,49 @@
+family,frame,scale_set,accept_D,nearest,nearest_prototype,D_best,runner_up,D_second,margin,strict_verdict,prototype_runner_up,D_prototype_runner_up,prototype_margin,prototype_verdict,correct_prototype,n_false_accept,false_accepts
+CsCl,250,orig,0.4,cscl,CsCl,0.0942,cscl_b2_anchor,0.0942,1.0,ambiguous,bif3_d03,0.3615,3.8369,matched,True,1,bif3_d03
+CsCl,250,expanded,not applied,cscl,CsCl,0.0876,cscl_b2_anchor,0.0876,1.0,ambiguous,bif3_d03,0.3418,3.9011,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+CsCl,300,orig,0.4,cscl,CsCl,0.0923,cscl_b2_anchor,0.0923,1.0,ambiguous,bif3_d03,0.3602,3.9031,matched,True,1,bif3_d03
+CsCl,300,expanded,not applied,cscl,CsCl,0.0857,cscl_b2_anchor,0.0857,1.0,ambiguous,bif3_d03,0.3406,3.9724,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+CsCl,350,orig,0.4,cscl,CsCl,0.0964,cscl_b2_anchor,0.0964,1.0,ambiguous,bif3_d03,0.3627,3.7636,matched,True,1,bif3_d03
+CsCl,350,expanded,not applied,cscl,CsCl,0.0898,cscl_b2_anchor,0.0898,1.0,ambiguous,bif3_d03,0.3431,3.8223,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+CsCl,400,orig,0.4,cscl,CsCl,0.0965,cscl_b2_anchor,0.0965,1.0,ambiguous,bif3_d03,0.3631,3.7626,matched,True,1,bif3_d03
+CsCl,400,expanded,not applied,cscl,CsCl,0.0898,cscl_b2_anchor,0.0898,1.0,ambiguous,bif3_d03,0.3434,3.8227,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+CsCl,450,orig,0.4,cscl,CsCl,0.0933,cscl_b2_anchor,0.0933,1.0,ambiguous,bif3_d03,0.3606,3.8655,matched,True,1,bif3_d03
+CsCl,450,expanded,not applied,cscl,CsCl,0.0867,cscl_b2_anchor,0.0867,1.0,ambiguous,bif3_d03,0.341,3.9315,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+CsCl,500,orig,0.4,cscl,CsCl,0.0927,cscl_b2_anchor,0.0927,1.0,ambiguous,bif3_d03,0.3608,3.893,matched,True,1,bif3_d03
+CsCl,500,expanded,not applied,cscl,CsCl,0.0861,cscl_b2_anchor,0.0861,1.0,ambiguous,bif3_d03,0.3411,3.9605,matched,True,41,bif3_d03;antifluorite_c1b;fluorite_c1;orig_zangenite;mosi2_c11b;fesi_b20
+Th3P4,250,orig,0.4,th3p4__8edd1f72,Th3P4,0.2579,th3p4_mp-1347_primitive,0.2677,1.0381,ambiguous,orig_zangenite,0.5032,1.9509,matched,True,0,
+Th3P4,250,expanded,not applied,th3p4__8edd1f72,Th3P4,0.2422,orig_Th3P4,0.2505,1.0344,ambiguous,orig_zangenite,0.4721,1.9493,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Th3P4,300,orig,0.4,th3p4__8edd1f72,Th3P4,0.2582,th3p4_mp-1347_primitive,0.2681,1.0382,ambiguous,orig_zangenite,0.5025,1.946,matched,True,0,
+Th3P4,300,expanded,not applied,th3p4__8edd1f72,Th3P4,0.2425,orig_Th3P4,0.2507,1.0341,ambiguous,orig_zangenite,0.4715,1.9444,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Th3P4,350,orig,0.4,th3p4__8edd1f72,Th3P4,0.255,th3p4_mp-1347_primitive,0.2662,1.0436,ambiguous,orig_zangenite,0.5021,1.9687,matched,True,0,
+Th3P4,350,expanded,not applied,th3p4__8edd1f72,Th3P4,0.2395,orig_Th3P4,0.2492,1.0402,ambiguous,orig_zangenite,0.471,1.9665,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Th3P4,400,orig,0.4,th3p4__8edd1f72,Th3P4,0.2534,th3p4_mp-1347_primitive,0.2646,1.0442,ambiguous,orig_zangenite,0.5015,1.9793,matched,True,0,
+Th3P4,400,expanded,not applied,th3p4__8edd1f72,Th3P4,0.238,orig_Th3P4,0.2475,1.0401,ambiguous,orig_zangenite,0.4705,1.9771,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Th3P4,450,orig,0.4,th3p4__8edd1f72,Th3P4,0.2533,th3p4_mp-1347_primitive,0.2643,1.0436,ambiguous,orig_zangenite,0.5012,1.9789,matched,True,0,
+Th3P4,450,expanded,not applied,th3p4__8edd1f72,Th3P4,0.2379,orig_Th3P4,0.2476,1.0409,ambiguous,orig_zangenite,0.4702,1.9766,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Th3P4,500,orig,0.4,th3p4__8edd1f72,Th3P4,0.252,orig_Th3P4,0.2632,1.0444,ambiguous,orig_zangenite,0.5022,1.993,matched,True,0,
+Th3P4,500,expanded,not applied,th3p4__8edd1f72,Th3P4,0.2367,orig_Th3P4,0.246,1.0392,ambiguous,orig_zangenite,0.4711,1.9905,matched,True,39,orig_zangenite;mnp_b31;zangenite__98bb84a4;fesi_b20;cementite_d011;orig_Ni3Sn
+Ni3Sn,250,orig,0.4,li3fe,li3fe,0.1853,orig_Ni3Sn,0.2546,1.3745,matched,orig_Ni3Sn,0.2546,1.3745,matched,False,1,li3fe
+Ni3Sn,250,expanded,not applied,li3fe,li3fe,0.1735,orig_Ni3Sn,0.2404,1.3858,matched,orig_Ni3Sn,0.2404,1.3858,matched,False,42,li3fe;al3ti_d022;mosi2_c11b;th3p4_anchor;th3p4__72406369;alb2_c32
+Ni3Sn,300,orig,0.4,li3fe,li3fe,0.1981,orig_Ni3Sn,0.2603,1.3141,matched,orig_Ni3Sn,0.2603,1.3141,matched,False,1,li3fe
+Ni3Sn,300,expanded,not applied,li3fe,li3fe,0.185,orig_Ni3Sn,0.2452,1.3253,matched,orig_Ni3Sn,0.2452,1.3253,matched,False,42,li3fe;al3ti_d022;th3p4_anchor;mosi2_c11b;th3p4__72406369;orig_zangenite
+Ni3Sn,350,orig,0.4,li3fe,li3fe,0.1837,orig_Ni3Sn,0.2552,1.3895,matched,orig_Ni3Sn,0.2552,1.3895,matched,False,1,li3fe
+Ni3Sn,350,expanded,not applied,li3fe,li3fe,0.172,orig_Ni3Sn,0.241,1.4011,matched,orig_Ni3Sn,0.241,1.4011,matched,False,42,li3fe;al3ti_d022;mosi2_c11b;th3p4_anchor;th3p4__72406369;alb2_c32
+Ni3Sn,400,orig,0.4,li3fe,li3fe,0.1935,orig_Ni3Sn,0.2562,1.3243,matched,orig_Ni3Sn,0.2562,1.3243,matched,False,1,li3fe
+Ni3Sn,400,expanded,not applied,li3fe,li3fe,0.1812,orig_Ni3Sn,0.2416,1.3333,matched,orig_Ni3Sn,0.2416,1.3333,matched,False,42,li3fe;al3ti_d022;mosi2_c11b;th3p4_anchor;th3p4__72406369;alb2_c32
+Ni3Sn,450,orig,0.4,li3fe,li3fe,0.2082,orig_Ni3Sn,0.2576,1.2371,matched,orig_Ni3Sn,0.2576,1.2371,matched,False,1,li3fe
+Ni3Sn,450,expanded,not applied,li3fe,li3fe,0.195,orig_Ni3Sn,0.2425,1.2439,matched,orig_Ni3Sn,0.2425,1.2439,matched,False,42,li3fe;al3ti_d022;th3p4_anchor;mosi2_c11b;th3p4__72406369;orig_zangenite
+Ni3Sn,500,orig,0.4,li3fe,li3fe,0.2064,orig_Ni3Sn,0.2595,1.2573,matched,orig_Ni3Sn,0.2595,1.2573,matched,False,1,li3fe
+Ni3Sn,500,expanded,not applied,li3fe,li3fe,0.1935,orig_Ni3Sn,0.2445,1.2632,matched,orig_Ni3Sn,0.2445,1.2632,matched,False,42,li3fe;al3ti_d022;th3p4_anchor;mosi2_c11b;th3p4__72406369;alb2_c32
+Cu3Au,250,orig,0.4,cu3au_l12,Cu3Au,0.1906,cu3au_mp-2258_conventional_standard,0.1906,1.0,ambiguous,al3ti_d022,0.3593,1.8852,matched,True,1,al3ti_d022
+Cu3Au,250,expanded,not applied,cu3au_l12,Cu3Au,0.1778,cu3au_mp-2258_conventional_standard,0.1778,1.0,ambiguous,al3ti_d022,0.3397,1.9113,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10
+Cu3Au,300,orig,0.4,cu3au_l12,Cu3Au,0.1898,cu3au_mp-2258_conventional_standard,0.1898,1.0,ambiguous,al3ti_d022,0.359,1.8912,matched,True,1,al3ti_d022
+Cu3Au,300,expanded,not applied,cu3au_l12,Cu3Au,0.1769,cu3au_mp-2258_conventional_standard,0.1769,1.0,ambiguous,al3ti_d022,0.3395,1.919,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10
+Cu3Au,350,orig,0.4,cu3au_l12,Cu3Au,0.1903,cu3au_mp-2258_conventional_standard,0.1903,1.0,ambiguous,al3ti_d022,0.3602,1.8932,matched,True,1,al3ti_d022
+Cu3Au,350,expanded,not applied,cu3au_l12,Cu3Au,0.1774,cu3au_mp-2258_conventional_standard,0.1774,1.0,ambiguous,al3ti_d022,0.3406,1.9199,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10
+Cu3Au,400,orig,0.4,cu3au_l12,Cu3Au,0.1889,cu3au_mp-2258_conventional_standard,0.1889,1.0,ambiguous,al3ti_d022,0.3634,1.9239,matched,True,1,al3ti_d022
+Cu3Au,400,expanded,not applied,cu3au_l12,Cu3Au,0.1763,cu3au_mp-2258_conventional_standard,0.1763,1.0,ambiguous,al3ti_d022,0.3434,1.9478,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10
+Cu3Au,450,orig,0.4,cu3au_l12,Cu3Au,0.1903,cu3au_mp-2258_conventional_standard,0.1903,1.0,ambiguous,al3ti_d022,0.3654,1.9197,matched,True,1,al3ti_d022
+Cu3Au,450,expanded,not applied,cu3au_l12,Cu3Au,0.1777,cu3au_mp-2258_conventional_standard,0.1777,1.0,ambiguous,al3ti_d022,0.3455,1.9444,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10
+Cu3Au,500,orig,0.4,cu3au_l12,Cu3Au,0.1889,cu3au_mp-2258_conventional_standard,0.1889,1.0,ambiguous,al3ti_d022,0.3619,1.9156,matched,True,1,al3ti_d022
+Cu3Au,500,expanded,not applied,cu3au_l12,Cu3Au,0.1763,cu3au_mp-2258_conventional_standard,0.1763,1.0,ambiguous,al3ti_d022,0.342,1.9398,matched,True,41,al3ti_d022;li3fe;ni3sn_d019;alb2_c32;orig_Ni3Sn;fe4n_lp10

@@ -1,0 +1,73 @@
+# Cu3Au (L1_2) colloidal crystal.
+#
+# Parameters follow van Kesteren, Zang, Hocky & Sacanna and the reference inputs in
+# runs/cu3au/{configurationnew.yaml, latticenew.lmp}:
+#
+#   Cu sites (3 per cell, the MAJORITY) -> the small POSITIVE colloid,  r = 102 nm
+#   Au site  (1 per cell, the minority) -> the large NEGATIVE colloid,  r = 120 nm
+#
+# The size ratio is doing the real work, not the charges. In fcc all 12 nearest
+# neighbours sit at the same centre-to-centre distance, but PACS depends on the
+# SURFACE separation h, and
+#
+#   h(Cu-Cu, like)   = nn - 2*102   = nn - 204
+#   h(Cu-Au, unlike) = nn - 102-120 = nn - 222
+#
+# so the like-charged majority pairs sit 18 nm further apart surface-to-surface than
+# the attractive pairs. With lambda_D ~ 5-12 nm, exp(-h/lambda_D) suppresses the
+# Cu-Cu repulsion by 4-40x purely from geometry. Setting the two radii equal destroys
+# this and the structure melts no matter how you tune the charges.
+#
+# Cu3Au is stabilised by REDUCING the charge of the species whose like-contacts are
+# closest -- here the positive majority (experimentally: adding SDS). Hence +25 mV,
+# attenuated from the ~+35 mV of the bare colloid, against -45 mV.
+
+name: cu3au
+cif: Cu3Au_mp-2258_conventional_standard.cif
+lattice_repeats: 12      # 12^3 cells x 4 atoms/cell = 6912 particles
+
+# --- particles ---------------------------------------------------------------
+# Keys MUST match the element symbols in the CIF.
+types:
+  Cu:                          # majority (3x), small, positive, charge-attenuated
+    radius_nm: 102.0
+    surface_potential_mV: 25.0
+    mass_dalton: 1.884998982291879
+  Au:                          # minority (1x), large, negative
+    radius_nm: 120.0
+    surface_potential_mV: -45.0
+    mass_dalton: 1.0
+
+# --- interactions ------------------------------------------------------------
+debye_length_nm: 6.0           # matched to the CsCl run that worked: pair well -5.4 kT vs -5.6 kT.
+                               # 12 nm gives a -28 kT pair well -> irreversible aggregation -> NaN.
+potential_temperature_K: 298.0
+brush_length_nm: 10.0
+brush_density_per_nm2: 0.09
+dielectric_constant: 80.0
+cutoff_factor: 21.0
+
+# --- lattice construction ----------------------------------------------------
+radii_padding_nm: 15.0         # the reference protocol's 15 nm initial spacing
+lattice_padding_nm: 1000.0
+optimize_energy: true
+energy_scale_range: [0.5, 1.5]
+energy_scale_samples: 50
+
+# --- relaxation / dynamics ---------------------------------------------------
+# The reference stability protocol: ramp 30 K -> 298 K over the first 200000 steps
+# of a 500000 step run, to stop the ideal lattice from spuriously dissolving.
+start_temperature_K: 30.0
+ramp_steps: 200000
+run_steps: 500000
+n_frames: 500
+timestep_ps: 0.3
+friction_per_ps: 1.0
+seed: 1
+
+use_gravity: true
+particle_density_g_per_cm3: 1.05
+water_density_g_per_cm3: 0.998
+walls: [true, true, true]
+
+platform: CUDA

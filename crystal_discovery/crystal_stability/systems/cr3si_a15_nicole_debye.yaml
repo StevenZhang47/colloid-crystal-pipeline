@@ -1,0 +1,54 @@
+# cr3si_a15_nicole_debye: postdoc-directed retry of Cr3Si A15.
+#
+# Rationale: design.py set lambda_D = 20.34 nm to force a -8 kT unlike-pair well
+# (the "deep8" rescue). That Debye length is ~4x larger than anything in Nicole's
+# phase diagram (her grid is 5.15-5.55 nm) and ~3-4x larger than the structures
+# that actually hold here (CsCl 5.0, Cu3Au 6.0). At 20.34 nm the v5 free-volume and
+# long10x runs melt/distort strongly (trailing Lindemann 0.75-10.7).
+#
+# Postdoc instruction: use one of Nicole's Debye points and drop the temperature
+# ramp. This file changes ONLY lambda_D (20.34 -> 5.5 nm, Nicole's canonical
+# seeded point debye5.5) and use_ramp (-> false, start at 298 K from step 0).
+# Charges (+5 / -35 mV), radii (102 / 120 nm) and all else are kept from
+# cr3si_a15_deep8.yaml so the Debye/ramp change is isolated.
+name: cr3si_a15_nicole_debye
+cif: cr3si_A15.cif
+lattice_repeats: 8
+types:
+  Cr:
+    radius_nm: 102.0
+    mass_dalton: 1.884998982291879
+    surface_potential_mV: 5.0
+  Si:
+    radius_nm: 120.0
+    mass_dalton: 1.0
+    surface_potential_mV: -35.0
+debye_length_nm: 5.5
+potential_temperature_K: 298.0
+brush_length_nm: 10.0
+brush_density_per_nm2: 0.09
+dielectric_constant: 80.0
+cutoff_factor: 21.0
+radii_padding_nm: 15.0
+lattice_padding_nm: 1000.0
+optimize_energy: true
+energy_scale_range:
+- 0.5
+- 1.5
+energy_scale_samples: 50
+start_temperature_K: 298.0
+ramp_steps: 200000
+run_steps: 500000
+n_frames: 500
+timestep_ps: 0.3
+friction_per_ps: 1.0
+seed: 1
+use_ramp: false
+use_gravity: true
+particle_density_g_per_cm3: 1.05
+water_density_g_per_cm3: 0.998
+walls:
+- true
+- true
+- true
+platform: CUDA

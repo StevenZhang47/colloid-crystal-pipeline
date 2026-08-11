@@ -1,0 +1,8 @@
+{
+  "n_amorphous_tested": 8,
+  "correctly_not_matched": 8,
+  "false_crystal_matches": 0,
+  "verdict_counts": {
+    "library_unmatched": 8
+  }
+}
