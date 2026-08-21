@@ -1,0 +1,20 @@
+panel,label,id,score,n_centres,expected,rho_predeclared,rho_p90,rho_p95,rho_p975,rho_p99,rho_max_region,rho_size_conditioned
+known_validation,CsCl,debye5.45_volumefraction.002704544521_seed2,2.736,525,ACCEPT,0.579,0.547,0.496,0.455,0.407,0.376,0.409
+known_validation,CsCl,debye5.45_volumefraction.002704544521_seed3,6.841,470,ACCEPT,1.447,1.369,1.242,1.137,1.019,0.942,1.023
+known_validation,CsCl,debye5.45_volumefraction.002704544521_seed4,2.42,505,ACCEPT,0.512,0.484,0.439,0.402,0.36,0.333,0.362
+known_validation,CsCl,debye5.45_volumefraction.004294716531_seed4,2.603,533,ACCEPT,0.551,0.521,0.472,0.433,0.388,0.358,0.389
+known_validation,Th3P4,debye5.15_volumefraction.012521039450_seed1,2.898,370,ACCEPT,0.613,0.58,0.526,0.481,0.431,0.399,0.433
+known_validation,Th3P4,debye5.15_volumefraction.012521039450_seed2,3.339,386,ACCEPT,0.706,0.668,0.606,0.555,0.497,0.46,0.499
+known_validation,Th3P4,debye5.15_volumefraction.012521039450_seed3,2.812,373,ACCEPT,0.595,0.563,0.51,0.467,0.419,0.387,0.42
+known_validation,Th3P4,debye5.15_volumefraction.012521039450_seed4,3.867,396,ACCEPT,0.818,0.773,0.702,0.642,0.576,0.532,0.578
+known_validation,amorphous,debye5.3_volumefraction.004294716531_seed1,4.105,343,ACCEPT,0.869,0.821,0.745,0.682,0.611,0.565,0.614
+known_validation,amorphous,debye5.3_volumefraction.004294716531_seed2,5.569,297,ACCEPT,1.178,1.114,1.011,0.925,0.829,0.766,0.832
+known_validation,amorphous,debye5.3_volumefraction.004294716531_seed3,4.532,339,ACCEPT,0.959,0.907,0.822,0.753,0.675,0.624,0.677
+known_validation,amorphous,debye5.3_volumefraction.004294716531_seed4,4.94,314,ACCEPT,1.045,0.988,0.896,0.821,0.736,0.68,0.738
+th3p4_look_candidate,GAT:Th3P4 LS=5.60,debye5.4_volumefraction.005575710117_seed1,23.503,317,?,4.972,4.702,4.265,3.905,3.5,3.235,3.513
+th3p4_look_candidate,GAT:Th3P4 LS=6.33,debye5.45_volumefraction.005575710117_seed1,29.176,286,?,6.173,5.837,5.294,4.848,4.345,4.015,4.361
+th3p4_look_candidate,GAT:Th3P4 LS=2.88,debye5.5_volumefraction.014494668294_seed3,17.133,345,?,3.625,3.427,3.109,2.847,2.551,2.358,2.561
+th3p4_look_candidate,GAT:Th3P4 LS=3.07,debye5.55_volumefraction.004294716531_seed4,18.245,309,?,3.86,3.65,3.311,3.032,2.717,2.511,2.727
+th3p4_look_candidate,GAT:Th3P4 LS=4.06,debye5.55_volumefraction.008655804247_seed2,23.832,324,?,5.042,4.767,4.325,3.96,3.549,3.28,3.562
+th3p4_look_candidate,GAT:Th3P4 LS=5.95,debye5.55_volumefraction.017591158913_seed3,33.093,292,?,7.001,6.62,6.005,5.499,4.928,4.554,4.946
+external_novel,K4C60,k4c60_final_frame.gsd,139.462,1101,REJECT,29.506,27.899,25.308,23.174,20.768,19.193,20.845

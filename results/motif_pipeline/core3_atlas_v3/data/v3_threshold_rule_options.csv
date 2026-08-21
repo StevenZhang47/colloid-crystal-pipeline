@@ -1,0 +1,13 @@
+cohort,rule,tau,validation_false_positive_rate,clean_controls_accepted,clean_controls_total,perturbed_controls_rejected,perturbed_controls_total
+A,PREDECLARED_p95_of_group_means,4.7265513686780025,0.24,0,8,16,16
+A,p95_of_calibration_region_scores,5.510590489225652,0.12,0,8,16,16
+A,p99_of_calibration_region_scores,6.715183082425851,0.04,0,8,16,16
+A,max_calibration_region_score,7.266171773930092,0.02,0,8,16,16
+A,max_group_mean_times_1.5,7.089827053017004,0.02,0,8,16,16
+A,chi2_like_sqrt_dim,5.656854249492381,0.1,0,8,16,16
+B,PREDECLARED_p95_of_group_means,4.937422623015235,0.22,0,8,16,16
+B,p95_of_calibration_region_scores,5.5410839003499195,0.12,0,8,16,16
+B,p99_of_calibration_region_scores,6.400837240805353,0.06,0,8,16,16
+B,max_calibration_region_score,6.750486762889559,0.02,0,8,16,16
+B,max_group_mean_times_1.5,7.4061339345228525,0.02,2,8,16,16
+B,chi2_like_sqrt_dim,5.656854249492381,0.12,0,8,16,16

@@ -1,0 +1,78 @@
+{
+  "cohorts": {
+    "A": {
+      "calibration": {
+        "groups": 19,
+        "regions": 70
+      },
+      "provisional_regions": 0,
+      "train": {
+        "groups": 68,
+        "regions": 126
+      },
+      "validation": {
+        "groups": 14,
+        "regions": 50
+      }
+    },
+    "B": {
+      "calibration": {
+        "groups": 19,
+        "regions": 70
+      },
+      "provisional_regions": 134,
+      "train": {
+        "groups": 70,
+        "regions": 260
+      },
+      "validation": {
+        "groups": 14,
+        "regions": 50
+      }
+    }
+  },
+  "configuration": {
+    "architecture": "hard condition-group split, NO group cross-fitting",
+    "center_cap_per_stratum": 128,
+    "covariance": "LedoitWolf on [LARGE|SMALL] region-mean summaries",
+    "gat_confidence_min": 0.911925,
+    "group_balance_regions_per_training_group": 4,
+    "pca_dimension": 16,
+    "seed": 20260803,
+    "summary_dimension": 32
+  },
+  "decision_rule": "NO model selection in this run. The untouched test stays sealed until the comparison report is complete and reviewed.",
+  "metrics": {
+    "M1_lofo": "strict leave-one-family-out. For each held-out family f: fit PCA and covariance on TRAIN groups excluding f; set tau on CALIBRATION groups excluding f; score VALIDATION regions of trained families (negatives) and all f regions from train+validation (positives). Report AUROC, average precision, TPR at tau, FPR at tau.",
+    "M2_known_false_positive_rate": "full model, no family held out. Fraction of expert-labelled VALIDATION regions with rho > 1.",
+    "M3_clean_control_retention": "the 24 frozen Phase-4 Method-A controls scored under each model; report acceptance of the 8 clean controls and rejection of the perturbed ones.",
+    "M4_threshold_stability": "1000 bootstrap resamples of the calibration GROUPS; report tau 5-95%, its relative width, and the fraction of validation regions whose accept/reject decision flips.",
+    "M5_context_shift": "the five center-set variants from the v2 failure analysis (frozen M3 centres, all non-gas centres, random species-matched, paired full natural component, cropped-with-natural-context) re-scored under each model; report rho ordering and stability."
+  },
+  "panels_reserved": {
+    "candidate_novel_trajectories": [
+      "debye5.45_volumefraction.005575710117_seed1",
+      "debye5.4_volumefraction.005575710117_seed1",
+      "debye5.55_volumefraction.004294716531_seed4",
+      "debye5.55_volumefraction.008655804247_seed2",
+      "debye5.55_volumefraction.017591158913_seed3",
+      "debye5.5_volumefraction.014494668294_seed3"
+    ],
+    "untouched_test_groups": [
+      "debye5.3_volumefraction.024130533489",
+      "debye5.4_volumefraction.010890058823",
+      "debye5.5_volumefraction.002704544521",
+      "debye5.5_volumefraction.005575710117",
+      "debye5.5_volumefraction.008655804247",
+      "debye5.5_volumefraction.017591158913"
+    ],
+    "untouched_test_trajectories": 24
+  },
+  "predeclaration_sha256": "29c1cf5d25d758bc147b5992d257b10f7c68ee3d7a9d374992e4a66ac6330bcc",
+  "split": {
+    "assignment": "deterministic sha256 rank of condition_group_id, per dominant family",
+    "calibration_fraction_of_expert_pure": 0.4,
+    "validation_fraction_of_expert_pure": 0.3
+  },
+  "status": "PREDECLARED_BEFORE_ANY_V3_MODEL_EXISTS"
+}

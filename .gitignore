@@ -115,3 +115,16 @@ opt/
 !manuscript/**/*.tex
 !manuscript/**/*.md
 !manuscript/**/*.bib
+
+# ---------------------------------------------------------------- FROZEN detector
+# The .npz rule above excludes caches; these two are the shipped inference artifacts
+# (~180 KB) and must travel with the code, so they are re-admitted explicitly.
+!results/motif_pipeline/core3_atlas_v3/frozen/
+!results/motif_pipeline/core3_atlas_v3/frozen/*.npz
+!results/motif_pipeline/core3_atlas_v3/frozen/*.json
+!results/motif_pipeline/core3_atlas_v3/data/
+!results/motif_pipeline/core3_atlas_v3/data/v3_covariance_structure_comparison.csv
+!results/motif_pipeline/core3_atlas_v3/data/v3_threshold_versions.csv
+!results/motif_pipeline/core3_atlas_v3/data/v3_structure_panel.csv
+!results/motif_pipeline/core3_atlas_v3/data/v3_threshold_rule_options.csv
+!results/motif_pipeline/core3_atlas_v3/data/V3_PREDECLARATION.json

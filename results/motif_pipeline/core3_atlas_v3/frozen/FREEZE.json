@@ -1,0 +1,38 @@
+{
+  "status": "FROZEN",
+  "frozen_utc": "2026-08-21T16:27:23Z",
+  "cohort": "A",
+  "covariance_structure": "global_ledoit_wolf",
+  "threshold_rule": "p99_of_individual_calibration_region_scores_interpolated",
+  "tau": 6.715183,
+  "shrinkage": 0.006154,
+  "covariance_condition_number": 3624.774,
+  "n_train_regions": 126,
+  "n_train_groups": 68,
+  "n_calibration_regions": 70,
+  "n_calibration_groups": 19,
+  "n_validation_regions": 50,
+  "known_false_positive_rate": 0.04,
+  "artifact": "ood_model_v3A_p99.npz",
+  "artifact_sha256": "8d02ee527b70b3ade599b9cec3c923855b093f2eecb03296b0f5066f86a4852b",
+  "predeclaration_sha256": "29c1cf5d25d758bc147b5992d257b10f7c68ee3d7a9d374992e4a66ac6330bcc",
+  "untouched_test_opened": false,
+  "model_selected": "v3-A, global Ledoit-Wolf, p99 threshold",
+  "evidence": {
+    "covariance_structure": "data/v3_covariance_structure_comparison.csv",
+    "threshold_versions": "data/v3_threshold_versions.csv",
+    "structure_panel": "data/v3_structure_panel.csv",
+    "ab_comparison": "reports/V3_A_VS_B_COMPARISON.md"
+  },
+  "validated_separation": {
+    "known_validation_rho": "0.360 - 1.019",
+    "th3p4_look_candidates_rho": "2.551 - 4.928 (all rejected)",
+    "K4C60_external_rho": 20.768
+  },
+  "known_limitations": [
+    "gas screen assumes ~4 near contacts; open frameworks (ReO3, cuprite) lose their majority sublattice before the descriptor sees them",
+    "the 24-control Phase-4 panel is measuring centre-convention mismatch, not detector quality, and must be rebuilt before it can inform anything",
+    "score depends on domain size (corr(log n_centres, log score) = -0.591); a size-conditioned threshold is implemented and has the most stable decisions (flip fraction 0.0061) but a higher known FPR (0.08)",
+    "tested on three well-separated families; the crowded 4-5 family regime where sequential expansion saw known-FPR rise 0.09 -> 0.36 is NOT covered here"
+  ]
+}
