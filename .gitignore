@@ -128,3 +128,20 @@ opt/
 !results/motif_pipeline/core3_atlas_v3/data/v3_structure_panel.csv
 !results/motif_pipeline/core3_atlas_v3/data/v3_threshold_rule_options.csv
 !results/motif_pipeline/core3_atlas_v3/data/V3_PREDECLARATION.json
+
+# ---------------------------------------------------------------- CLI package
+# `crystal-discovery analyze trajectory.gsd`. The reference bank (~600 KB) is a shipped
+# inference artifact like the frozen detector, so it is re-admitted past the *.npz rule.
+!pkg/
+!pkg/pyproject.toml
+!pkg/*.py
+!pkg/*.sbatch
+!pkg/*.md
+!pkg/configs/
+!pkg/configs/*.yaml
+!pkg/references/
+!pkg/references/*.npz
+!pkg/references/*.json
+!pkg/src/
+!pkg/src/crystal_discovery/
+!pkg/src/crystal_discovery/*.py

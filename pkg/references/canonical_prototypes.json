@@ -1,0 +1,154 @@
+{
+  "n_anchors": 37,
+  "dimension": 1904,
+  "anchors": [
+    {
+      "slug": "al3ti_d022",
+      "prototype": "al3ti_d022"
+    },
+    {
+      "slug": "alb2_c32",
+      "prototype": "alb2_c32"
+    },
+    {
+      "slug": "anatase_c5",
+      "prototype": "anatase_c5"
+    },
+    {
+      "slug": "antifluorite_c1b",
+      "prototype": "fluorite"
+    },
+    {
+      "slug": "bif3_d03",
+      "prototype": "bif3_d03"
+    },
+    {
+      "slug": "cdi2_c6",
+      "prototype": "cdi2_c6"
+    },
+    {
+      "slug": "cementite_d011",
+      "prototype": "cementite_d011"
+    },
+    {
+      "slug": "cr3si_a15",
+      "prototype": "Cr3Si_A15"
+    },
+    {
+      "slug": "cscl",
+      "prototype": "CsCl"
+    },
+    {
+      "slug": "cscl_b2_anchor",
+      "prototype": "CsCl"
+    },
+    {
+      "slug": "cu3au_l12",
+      "prototype": "Cu3Au"
+    },
+    {
+      "slug": "cu3au_mp-2258_conventional_standard",
+      "prototype": "Cu3Au"
+    },
+    {
+      "slug": "cuau_l10",
+      "prototype": "cuau_l10"
+    },
+    {
+      "slug": "cuprite_c3",
+      "prototype": "cuprite_c3"
+    },
+    {
+      "slug": "fe4n_lp10",
+      "prototype": "fe4n_lp10"
+    },
+    {
+      "slug": "fesi_b20",
+      "prototype": "fesi_b20"
+    },
+    {
+      "slug": "fluorite_c1",
+      "prototype": "fluorite"
+    },
+    {
+      "slug": "i3p_a3b_hp8",
+      "prototype": "i3p_a3b_hp8"
+    },
+    {
+      "slug": "li3fe",
+      "prototype": "Ni3Sn"
+    },
+    {
+      "slug": "mnp_b31",
+      "prototype": "mnp_b31"
+    },
+    {
+      "slug": "mosi2_c11b",
+      "prototype": "mosi2_c11b"
+    },
+    {
+      "slug": "ni3sn_d019",
+      "prototype": "Ni3Sn"
+    },
+    {
+      "slug": "nickeline_b81",
+      "prototype": "nickeline_b81"
+    },
+    {
+      "slug": "pyrite_c2",
+      "prototype": "pyrite_c2"
+    },
+    {
+      "slug": "reo3_d09",
+      "prototype": "reo3_d09"
+    },
+    {
+      "slug": "rocksalt_b1",
+      "prototype": "rocksalt_B1"
+    },
+    {
+      "slug": "rutile_c4",
+      "prototype": "rutile_c4"
+    },
+    {
+      "slug": "spinel_inverse_fe3o4",
+      "prototype": "spinel_inverse_fe3o4"
+    },
+    {
+      "slug": "spinel_normal_co3o4",
+      "prototype": "spinel_normal_co3o4"
+    },
+    {
+      "slug": "th3p4__72406369",
+      "prototype": "Th3P4"
+    },
+    {
+      "slug": "th3p4__8edd1f72",
+      "prototype": "Th3P4"
+    },
+    {
+      "slug": "th3p4_anchor",
+      "prototype": "Th3P4"
+    },
+    {
+      "slug": "th3p4_mp-1347_primitive",
+      "prototype": "Th3P4"
+    },
+    {
+      "slug": "wc_bh",
+      "prototype": "wc_bh"
+    },
+    {
+      "slug": "wurtzite_b4",
+      "prototype": "wurtzite_b4"
+    },
+    {
+      "slug": "zangenite__98bb84a4",
+      "prototype": "zangenite"
+    },
+    {
+      "slug": "zincblende_b3",
+      "prototype": "zincblende_b3"
+    }
+  ]
+}

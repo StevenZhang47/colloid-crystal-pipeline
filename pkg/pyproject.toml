@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crystal-discovery"
+version = "0.1.0"
+description = "Open-set detection and identification of colloidal crystal structures"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pyyaml>=6.0",
+    "gsd>=3.0",
+    "freud-analysis>=3.0",
+    "dscribe>=2.0",
+]
+
+# THIS is what creates the `crystal-discovery` command. On `pip install`, pip writes a
+# small launcher onto PATH that imports crystal_discovery.cli and calls main().
+[project.scripts]
+crystal-discovery = "crystal_discovery.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Non-Python files must be declared or they are not installed alongside the code.
+[tool.setuptools.package-data]
+crystal_discovery = ["../../configs/*.yaml"]

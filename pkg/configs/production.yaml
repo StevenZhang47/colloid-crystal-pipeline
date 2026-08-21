@@ -1,0 +1,42 @@
+# Frozen production configuration.
+#
+# Every number here is a scientific decision, not a tuning knob. Provenance is given so a
+# reader can trace each value back to the run that fixed it. Changing any of them makes
+# the output incomparable with the published results.
+
+preprocessing:
+  # Radius-normalised separation s = d_ij / (R_i + R_j).
+  contact_multiplier: 1.62        # s < 1.62 defines a physical contact / component
+  graph_multiplier: 1.35          # s < 1.35 defines the contact graph for coordination
+  mean_r4_star_threshold: 1.2698  # gas if mean over 4 nearest of d/(R_i+R_j) exceeds this
+  # NOTE: mean_r4_star assumes a cohesive particle has ~4 near contacts. Open frameworks
+  # violate it -- on an ideal ReO3 anchor it removed the whole majority sublattice
+  # (5324 particles in, 1330 out). See docs/LIMITATIONS.md.
+
+m3:
+  # A particle is excluded as a SOAP CENTRE (not deleted) when both hold.
+  exposure_threshold: 0.14        # exposure = ||sum unit(r_j - r_i)|| / coordination
+  coordination_threshold: 13
+
+soap:
+  n_max: 8
+  l_max: 6
+  r_cut: 3.0                      # in units of d0
+  sigma: 0.10                     # in units of d0
+  species: [11, 17]               # placeholder Z for LARGE, SMALL
+  dimension: 952                  # asserted at runtime; (16*17/2)*7
+  # d0 = median nearest-neighbour distance within the physical component, so every
+  # length is expressed relative to the local lattice scale and the descriptor is
+  # scale-free.
+
+ood:
+  pca_dimension_per_species: 16   # -> 32-D domain fingerprint [LARGE | SMALL]
+  covariance: ledoit_wolf
+  # rho = mahalanobis_distance / tau ; reject when rho > 1
+
+retrieval:
+  # Frozen at the SOAP baseline freeze of the architecture-decision study.
+  # Source: results/final_architecture_decision_v1/data/SOAP_BASELINE_FREEZE.json
+  #         folds/H-TH3P4 and folds/H-CU3AU (identical in both folds)
+  distance_threshold: 0.2404109239578247
+  margin_threshold: 1.117297887802124
