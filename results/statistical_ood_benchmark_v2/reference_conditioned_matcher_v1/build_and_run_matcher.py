@@ -234,7 +234,24 @@ def calibrate(envelopes):
 # margin 1.98) is still accepted; candidate 2 (Cu3Au, D=0.361, margin 1.34) is now
 # REJECTED, because at 0.361 it is indistinguishable by distance from the Al3Ti and BiF3
 # false matches. That is a real consequence and is flagged, not absorbed.
-ACCEPT_D = 0.31
+# REVERTED to the frozen 0.40 on 2026-08-21.
+#
+# 0.31 was derived from the true/holdout separation on the expanded library and is a
+# better number for THIS library -- at 0.40, 12 of 24 leave-own-prototype-out cases
+# false-match (Cu3Au -> Al3Ti 6/6, CsCl -> BiF3 5/6). But AUDIT.md 4.1 states that no EMD
+# threshold may be chosen until a canonical equivalence manifest is frozen and the 24-case
+# removal audit is recomputed WITHOUT external candidates, and the run that produced 0.31
+# scored the external candidates alongside. So the number is defensible and the procedure
+# is not.
+#
+# It is reverted rather than defended because this EMD path is superseded: the
+# preregistered comparison gives SOAP retrieval 3.11x/2.13x separation against EMD's
+# 1.90x/1.88x on the two sentinels, and SOAP abstained 2/2 after prototype removal where
+# EMD confidently accepted the wrong prototype 2/2. Production retrieval is
+# pkg/src/crystal_discovery/retrieval.py at distance threshold 0.2404109239578247.
+#
+# Evidence for 0.31, retained: accept_d_recalibration.csv, accept_d_recommendation.json.
+ACCEPT_D = 0.40
 
 
 def score(cand, anchors, tau, scales, active, accept_D=ACCEPT_D):
