@@ -1,0 +1,6 @@
+dataset,name,path,role,note
+external_probe,K4C60,/projects/rps/gmh4/hockygroup/sz5808/k4c60_inspect/k4c60_final_frame.gsd,novelty positive control (never in training),"potassium-doped fullerene; nothing like it in the atlas. Frozen detector scores rho 22.5 -> OOD, retrieval abstains."
+external_probe,external_candidate_1,/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/data/test_set/steven_example_1.gsd,external candidate,nearest prototype Ni3Sn
+external_probe,external_candidate_2,/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/unified_pipeline/data/test_set/steven_example_2.gsd,external candidate,nearest prototype Cu3Au
+collaborator,Hoellmer snowman sweep,/scratch/ph2484/ProjectHocky/NewSnowmenRuns/SweepLong,"external molecular system, NOT used in any fit",rigid trimers (body+lobe+head). 156 run dirs. Binary body+lobe reduction is only valid at low seed_ratio; above ~0.35 head/body the system is ternary and the reduction discards a real species.
+collaborator,Hoellmer snowman sweep (retry),/scratch/ph2484/ProjectHocky/NewSnowmenRuns/SweepLongRetry,"external molecular system, NOT used in any fit",

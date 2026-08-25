@@ -145,3 +145,10 @@ opt/
 !pkg/src/
 !pkg/src/crystal_discovery/
 !pkg/src/crystal_discovery/*.py
+
+# ---------------------------------------------------------------- data provenance
+!DATA/
+!DATA/*.md
+!DATA/*.py
+!DATA/*.csv
+!DATA/*.json

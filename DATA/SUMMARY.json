@@ -1,0 +1,30 @@
+{
+  "detector_atlas": {
+    "trajectories": 380,
+    "condition_groups": 103,
+    "by_role": {
+      "train": 260,
+      "calibration": 70,
+      "validation": 50
+    },
+    "by_label": {
+      "amorphous": 171,
+      "Th3P4": 115,
+      "CsCl": 94
+    },
+    "cohort_A_regions": 246,
+    "cohort_B_regions": 380
+  },
+  "untouched_test": {
+    "trajectories": 24,
+    "condition_groups": 6,
+    "opened": false
+  },
+  "candidate_novel_panel": 6,
+  "reference_library": {
+    "cifs": 43,
+    "usable": 37,
+    "in_matcher_bank": 37
+  },
+  "external_datasets": 5
+}
