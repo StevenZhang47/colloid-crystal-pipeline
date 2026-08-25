@@ -41,7 +41,6 @@ Those are different questions, asked by different machinery, and they are allowe
 **Use an isolated environment.** Two of the dependencies — `dscribe` and `freud` — are
 compiled extensions. Conda-forge ships them as prebuilt binaries; from PyPI they may build
 from source, which needs a C++ toolchain and is where most fresh-machine installs fail.
-Installing into system Python is asking for trouble either way.
 
 ```bash
 git clone git@github.com:StevenZhang47/colloid-crystal-pipeline.git
@@ -68,10 +67,6 @@ python -m pip install -e pkg
 If `dscribe` or `freud-analysis` fails to build, use the conda route instead rather than
 fighting the compiler.
 </details>
-
-Beyond that there is nothing to set up: **no environment variables are required and
-nothing needs downloading** — the frozen detector and the 17 MB reference bank travel with
-the repository. A fresh clone is 37 MB and works immediately.
 
 ### What your GSD file needs
 
