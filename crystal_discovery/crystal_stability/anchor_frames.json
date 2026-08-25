@@ -1,0 +1,348 @@
+{
+  "rule": {
+    "ramp_done_frame": 200,
+    "probe_stride": 10,
+    "min_edge_retention": 0.9,
+    "max_bond_strain_rms": 0.15,
+    "max_gas_frac": 0.02,
+    "min_largest_comp_frac": 0.95,
+    "pick": "median admissible frame index"
+  },
+  "anchors": {
+    "lib_al3ti_d022": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.9204,
+      "best_bond_strain_rms": 0.2351,
+      "best_gas_frac": 0.037
+    },
+    "lib_alb2_c32": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.5599,
+      "best_bond_strain_rms": 0.3061,
+      "best_gas_frac": 0.0082
+    },
+    "lib_anatase_c5": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7812,
+      "best_bond_strain_rms": 0.2896,
+      "best_gas_frac": 0.0497
+    },
+    "lib_antifluorite_c1b": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.9247,
+      "best_bond_strain_rms": 0.168,
+      "best_gas_frac": 0.0169
+    },
+    "lib_bif3_d03": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7226,
+      "best_bond_strain_rms": 0.3488,
+      "best_gas_frac": 0.0601
+    },
+    "lib_cdi2_c6": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.5599,
+      "best_bond_strain_rms": 0.2833,
+      "best_gas_frac": 0.0762
+    },
+    "lib_cementite_d011": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.753,
+      "best_bond_strain_rms": 0.2697,
+      "best_gas_frac": 0.0388
+    },
+    "lib_cr3si_a15": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.8226,
+      "best_bond_strain_rms": 0.2599,
+      "best_gas_frac": 0.043
+    },
+    "lib_cscl": {
+      "status": "OK",
+      "frame": 230,
+      "n_admissible": 7,
+      "n_probed": 31,
+      "edge_retention": 0.9912,
+      "bond_strain_rms": 0.1053,
+      "gas_frac": 0.0058,
+      "largest_comp_frac": 0.9942
+    },
+    "lib_cscl_b2_anchor": {
+      "status": "OK",
+      "frame": 230,
+      "n_admissible": 7,
+      "n_probed": 31,
+      "edge_retention": 0.9912,
+      "bond_strain_rms": 0.1053,
+      "gas_frac": 0.0058,
+      "largest_comp_frac": 0.9942
+    },
+    "lib_cu3au": {
+      "status": "NO_TRAJECTORY"
+    },
+    "lib_cu3au_l12": {
+      "status": "OK",
+      "frame": 210,
+      "n_admissible": 2,
+      "n_probed": 31,
+      "edge_retention": 0.9483,
+      "bond_strain_rms": 0.1464,
+      "gas_frac": 0.015,
+      "largest_comp_frac": 0.985
+    },
+    "lib_cu3au_mp-2258_conventional_standard": {
+      "status": "OK",
+      "frame": 210,
+      "n_admissible": 2,
+      "n_probed": 31,
+      "edge_retention": 0.9483,
+      "bond_strain_rms": 0.1464,
+      "gas_frac": 0.015,
+      "largest_comp_frac": 0.985
+    },
+    "lib_cuau_l10": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7981,
+      "best_bond_strain_rms": 0.1982,
+      "best_gas_frac": 0.0154
+    },
+    "lib_cuprite_c3": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.6831,
+      "best_bond_strain_rms": 0.3732,
+      "best_gas_frac": 0.0808
+    },
+    "lib_fe4n_lp10": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.701,
+      "best_bond_strain_rms": 0.354,
+      "best_gas_frac": 0.1037
+    },
+    "lib_fesi_b20": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 4,
+      "n_probed": 31,
+      "edge_retention": 0.9651,
+      "bond_strain_rms": 0.1112,
+      "gas_frac": 0.0053,
+      "largest_comp_frac": 0.9947
+    },
+    "lib_fluorite_c1": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.9238,
+      "best_bond_strain_rms": 0.1682,
+      "best_gas_frac": 0.0177
+    },
+    "lib_i3p_a3b_hp8": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.6013,
+      "best_bond_strain_rms": 0.435,
+      "best_gas_frac": 0.4138
+    },
+    "lib_laves_c14_mgzn2": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.0,
+      "best_bond_strain_rms": NaN,
+      "best_gas_frac": 0.4865
+    },
+    "lib_laves_c15_mgcu2": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.0,
+      "best_bond_strain_rms": NaN,
+      "best_gas_frac": 0.468
+    },
+    "lib_laves_c36_mgni2": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.0,
+      "best_bond_strain_rms": NaN,
+      "best_gas_frac": 0.526
+    },
+    "lib_li3fe": {
+      "status": "OK",
+      "frame": 210,
+      "n_admissible": 2,
+      "n_probed": 31,
+      "edge_retention": 0.9668,
+      "bond_strain_rms": 0.1309,
+      "gas_frac": 0.0125,
+      "largest_comp_frac": 0.9875
+    },
+    "lib_mnp_b31": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.5994,
+      "best_bond_strain_rms": 0.2511,
+      "best_gas_frac": 0.0144
+    },
+    "lib_mosi2_c11b": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.9461,
+      "best_bond_strain_rms": 0.1573,
+      "best_gas_frac": 0.0206
+    },
+    "lib_natl_b32": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.0,
+      "best_bond_strain_rms": NaN,
+      "best_gas_frac": 0.4596
+    },
+    "lib_ni3sn_d019": {
+      "status": "OK",
+      "frame": 210,
+      "n_admissible": 3,
+      "n_probed": 31,
+      "edge_retention": 0.9728,
+      "bond_strain_rms": 0.1123,
+      "gas_frac": 0.0087,
+      "largest_comp_frac": 0.9913
+    },
+    "lib_nickeline_b81": {
+      "status": "OK",
+      "frame": 200,
+      "n_admissible": 1,
+      "n_probed": 31,
+      "edge_retention": 0.9495,
+      "bond_strain_rms": 0.1431,
+      "gas_frac": 0.016,
+      "largest_comp_frac": 0.984
+    },
+    "lib_pyrite_c2": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7889,
+      "best_bond_strain_rms": 0.3121,
+      "best_gas_frac": 0.0259
+    },
+    "lib_reo3_d09": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.6961,
+      "best_bond_strain_rms": 0.3638,
+      "best_gas_frac": 0.1206
+    },
+    "lib_rocksalt_b1": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 4,
+      "n_probed": 31,
+      "edge_retention": 0.9489,
+      "bond_strain_rms": 0.1261,
+      "gas_frac": 0.0063,
+      "largest_comp_frac": 0.9937
+    },
+    "lib_rutile_c4": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7983,
+      "best_bond_strain_rms": 0.268,
+      "best_gas_frac": 0.0409
+    },
+    "lib_spinel_inverse_fe3o4": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7711,
+      "best_bond_strain_rms": 0.2834,
+      "best_gas_frac": 0.0198
+    },
+    "lib_spinel_normal_co3o4": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7895,
+      "best_bond_strain_rms": 0.2626,
+      "best_gas_frac": 0.0208
+    },
+    "lib_th3p4__72406369": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 5,
+      "n_probed": 31,
+      "edge_retention": 0.9268,
+      "bond_strain_rms": 0.118,
+      "gas_frac": 0.0129,
+      "largest_comp_frac": 0.9871
+    },
+    "lib_th3p4__8edd1f72": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 5,
+      "n_probed": 31,
+      "edge_retention": 0.9252,
+      "bond_strain_rms": 0.1113,
+      "gas_frac": 0.0098,
+      "largest_comp_frac": 0.9902
+    },
+    "lib_th3p4_anchor": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 4,
+      "n_probed": 31,
+      "edge_retention": 0.9237,
+      "bond_strain_rms": 0.1228,
+      "gas_frac": 0.0126,
+      "largest_comp_frac": 0.9874
+    },
+    "lib_th3p4_mp-1347_primitive": {
+      "status": "OK",
+      "frame": 220,
+      "n_admissible": 4,
+      "n_probed": 31,
+      "edge_retention": 0.927,
+      "bond_strain_rms": 0.1166,
+      "gas_frac": 0.0131,
+      "largest_comp_frac": 0.9869
+    },
+    "lib_wc_bh": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.8729,
+      "best_bond_strain_rms": 0.1571,
+      "best_gas_frac": 0.0155
+    },
+    "lib_wurtzite_b4": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7172,
+      "best_bond_strain_rms": 0.3353,
+      "best_gas_frac": 0.044
+    },
+    "lib_zangenite__471e7cda": {
+      "status": "NO_TRAJECTORY"
+    },
+    "lib_zangenite__98bb84a4": {
+      "status": "OK",
+      "frame": 200,
+      "n_admissible": 1,
+      "n_probed": 31,
+      "edge_retention": 0.9269,
+      "bond_strain_rms": 0.143,
+      "gas_frac": 0.012,
+      "largest_comp_frac": 0.988
+    },
+    "lib_zincblende_b3": {
+      "status": "FAILED",
+      "reason": "no frame passed the declared gates",
+      "best_edge_retention": 0.7536,
+      "best_bond_strain_rms": 0.3003,
+      "best_gas_frac": 0.0309
+    }
+  }
+}

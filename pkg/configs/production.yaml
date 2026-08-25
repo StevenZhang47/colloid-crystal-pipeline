@@ -35,8 +35,24 @@ ood:
   # rho = mahalanobis_distance / tau ; reject when rho > 1
 
 retrieval:
-  # Frozen at the SOAP baseline freeze of the architecture-decision study.
-  # Source: results/final_architecture_decision_v1/data/SOAP_BASELINE_FREEZE.json
-  #         folds/H-TH3P4 and folds/H-CU3AU (identical in both folds)
-  distance_threshold: 0.2404109239578247
-  margin_threshold: 1.117297887802124
+  # One-sided chamfer with a median reduction: for each candidate centre, the distance to
+  # its nearest environment in the anchor; median over centres, per species, averaged.
+  # Replaces the mean-SOAP centroid distance, which could not reject amorphous domains --
+  # a diffuse cloud whose centre lands near a prototype's centre reads as that prototype.
+  method: chamfer_median
+  cover_radius: 0.02              # anchor environments deduplicated at this radius
+
+  # Both gates fitted on the SAME 50 held-out validation trajectories (13 CsCl, 11 Th3P4,
+  # 26 amorphous) against all 41 cold anchors. Each separates the populations completely;
+  # a domain must clear both. Source: acceptance_cold_frozen.json, method chamfer_median.
+  #
+  #             crystals      amorphous     window            gap
+  #   distance  <= 0.1294     >= 0.1943     [0.1294, 0.1943]  1.50x
+  #   margin    >= 3.309      <= 1.590      [1.590, 3.309]    2.08x
+  distance_threshold: 0.1619      # midpoint of the distance window
+  margin_threshold: 2.45          # midpoint of the margin window
+
+  # Result on that split: CsCl 13/13, Th3P4 11/11, amorphous 0/26 accepted.
+  # NOT validated for open frameworks -- see docs/LIMITATIONS.md. The gas screen and the
+  # M3 coordination clause both degenerate there, and the 14-family prototype benchmark
+  # failed on exactly the seven families that lose most of their particles to screening.

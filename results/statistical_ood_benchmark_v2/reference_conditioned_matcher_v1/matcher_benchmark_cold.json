@@ -1,0 +1,95 @@
+{
+  "emd": {
+    "rank1_correct": "31/82",
+    "rank1_accuracy": 0.378,
+    "max_D_true": 1.36907,
+    "min_D_holdout": 0.32904,
+    "gap_ratio": 0.24,
+    "n_false_accepts_at_tightest_threshold": 82,
+    "threshold_window": null,
+    "families_rank1_wrong": [
+      "antifluorite_c1b",
+      "cr3si_a15",
+      "fe4n_lp10",
+      "fluorite_c1",
+      "i3p_a3b_hp8",
+      "nickeline_b81",
+      "reo3_d09",
+      "rocksalt_b1",
+      "zincblende_b3"
+    ]
+  },
+  "soap_chamfer": {
+    "rank1_correct": "40/82",
+    "rank1_accuracy": 0.4878,
+    "max_D_true": 0.56649,
+    "min_D_holdout": 0.19937,
+    "gap_ratio": 0.352,
+    "n_false_accepts_at_tightest_threshold": 82,
+    "threshold_window": null,
+    "families_rank1_wrong": [
+      "antifluorite_c1b",
+      "cr3si_a15",
+      "fe4n_lp10",
+      "fluorite_c1",
+      "i3p_a3b_hp8",
+      "nickeline_b81",
+      "reo3_d09",
+      "zincblende_b3"
+    ]
+  },
+  "soap_mean": {
+    "rank1_correct": "44/82",
+    "rank1_accuracy": 0.5366,
+    "max_D_true": 0.54268,
+    "min_D_holdout": 0.19165,
+    "gap_ratio": 0.353,
+    "n_false_accepts_at_tightest_threshold": 78,
+    "threshold_window": null,
+    "families_rank1_wrong": [
+      "antifluorite_c1b",
+      "cr3si_a15",
+      "fe4n_lp10",
+      "fluorite_c1",
+      "nickeline_b81",
+      "reo3_d09",
+      "zincblende_b3"
+    ]
+  },
+  "soap_meanstd": {
+    "rank1_correct": "44/82",
+    "rank1_accuracy": 0.5366,
+    "max_D_true": 0.55042,
+    "min_D_holdout": 0.23845,
+    "gap_ratio": 0.433,
+    "n_false_accepts_at_tightest_threshold": 78,
+    "threshold_window": null,
+    "families_rank1_wrong": [
+      "antifluorite_c1b",
+      "cr3si_a15",
+      "fe4n_lp10",
+      "fluorite_c1",
+      "nickeline_b81",
+      "reo3_d09",
+      "zincblende_b3"
+    ]
+  },
+  "soap_mmd": {
+    "rank1_correct": "44/82",
+    "rank1_accuracy": 0.5366,
+    "max_D_true": 0.53265,
+    "min_D_holdout": 0.2027,
+    "gap_ratio": 0.381,
+    "n_false_accepts_at_tightest_threshold": 78,
+    "threshold_window": null,
+    "families_rank1_wrong": [
+      "antifluorite_c1b",
+      "cr3si_a15",
+      "fe4n_lp10",
+      "fluorite_c1",
+      "nickeline_b81",
+      "reo3_d09",
+      "zincblende_b3"
+    ]
+  }
+}

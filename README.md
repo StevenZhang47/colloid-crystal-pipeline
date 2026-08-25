@@ -20,9 +20,9 @@ GSD trajectory
    |                  -> Ledoit-Wolf Mahalanobis, group-balanced
    |                  -> reject if rho = d/tau > 1
    v
-   |  4. IDENTIFY     partial g(r) + total g(r) + powder S(k), compared to a library of
-   |                  CIF-ideal anchors by 1-D Wasserstein distance
-   |                  D = mean over channels of (EMD / median inter-anchor scale)
+   |  4. IDENTIFY     one-sided chamfer against 41 CIF-ideal anchors: for each candidate
+   |                  centre, the distance to its NEAREST anchor environment; median over
+   |                  centres, per species. Accept on distance <= 0.1619 AND margin >= 2.45
    v
 matched prototype, or "not in the library"
 ```
@@ -82,7 +82,8 @@ differently lands in a different minimum.
   Deepening the pair well does not help, it lengthens the Debye screening.
 - **Two library CIFs are unusable**: one Cu3Au file expands to 96 sites with coincident
   pairs, and one zangenite file uses non-element species labels.
-- **Matcher acceptance is under revision.** The expanded library contains prototypes that are
-  structural neighbours of each other (Al3Ti sits near both Cu3Au and Ni3Sn), which the
-  original acceptance cutoff was not calibrated against. See `AUDIT.md` §4.1 in the
-  preregistration for the constraint on choosing a new one.
+- **The matcher is validated on CsCl, Th3P4 and amorphous only.** On the 50 held-out
+  validation trajectories it scores 13/13, 11/11 and rejects 26/26 amorphous. A wider
+  14-family prototype benchmark fails on the seven families that lose most of their
+  particles to the gas screen, which is the open-framework limitation above rather than a
+  matcher limitation. `pkg/verify_acceptance.py` reproduces the acceptance test.

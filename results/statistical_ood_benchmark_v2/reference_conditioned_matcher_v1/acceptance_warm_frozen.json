@@ -1,0 +1,206 @@
+{
+  "anchors": "warm",
+  "candidate_prep": "frozen",
+  "split": "validation",
+  "runtime_seconds": 207.2,
+  "dropped": [],
+  "per_method": {
+    "chamfer_median": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.1159,
+      "min_D_amorphous": 0.17739,
+      "gap_ratio": 1.531,
+      "n_amorphous_accepted": 0,
+      "n_amorphous": 26,
+      "accept_D_window": [
+        0.1159,
+        0.17739
+      ],
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.05579,
+          "margin": 3.946
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.13073,
+          "margin": 1.74
+        }
+      }
+    },
+    "chamfer_t90": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.11156,
+      "min_D_amorphous": 0.17201,
+      "gap_ratio": 1.542,
+      "n_amorphous_accepted": 0,
+      "n_amorphous": 26,
+      "accept_D_window": [
+        0.11156,
+        0.17201
+      ],
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.06104,
+          "margin": 3.548
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.13552,
+          "margin": 1.671
+        }
+      }
+    },
+    "soap_chamfer": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.12312,
+      "min_D_amorphous": 0.18019,
+      "gap_ratio": 1.464,
+      "n_amorphous_accepted": 0,
+      "n_amorphous": 26,
+      "accept_D_window": [
+        0.12312,
+        0.18019
+      ],
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.07128,
+          "margin": 3.172
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.14375,
+          "margin": 1.622
+        }
+      }
+    },
+    "soap_mean": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.12896,
+      "min_D_amorphous": 0.15248,
+      "gap_ratio": 1.182,
+      "n_amorphous_accepted": 0,
+      "n_amorphous": 26,
+      "accept_D_window": [
+        0.12896,
+        0.15248
+      ],
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.13827,
+          "margin": 1.891
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.18854,
+          "margin": 1.368
+        }
+      }
+    },
+    "soap_meanstd": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.18383,
+      "min_D_amorphous": 0.17924,
+      "gap_ratio": 0.975,
+      "n_amorphous_accepted": 3,
+      "n_amorphous": 26,
+      "accept_D_window": null,
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.16508,
+          "margin": 1.724
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.21634,
+          "margin": 1.268
+        }
+      }
+    },
+    "soap_mmd": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.14342,
+      "min_D_amorphous": 0.16805,
+      "gap_ratio": 1.172,
+      "n_amorphous_accepted": 0,
+      "n_amorphous": 26,
+      "accept_D_window": [
+        0.14342,
+        0.16805
+      ],
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.15618,
+          "margin": 1.86
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.20805,
+          "margin": 1.382
+        }
+      }
+    },
+    "soap_sw": {
+      "CsCl_rank1": "13/13",
+      "Th3P4_rank1": "11/11",
+      "max_D_crystal": 0.00668,
+      "min_D_amorphous": 0.0062,
+      "gap_ratio": 0.928,
+      "n_amorphous_accepted": 18,
+      "n_amorphous": 26,
+      "accept_D_window": null,
+      "amorphous_rank1_prototypes": {
+        "Th3P4": 25,
+        "zangenite": 1
+      },
+      "external": {
+        "steven_example_1": {
+          "rank1": "Ni3Sn",
+          "D": 0.00606,
+          "margin": 1.601
+        },
+        "steven_example_2": {
+          "rank1": "Cu3Au",
+          "D": 0.00777,
+          "margin": 1.186
+        }
+      }
+    }
+  }
+}

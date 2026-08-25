@@ -12,32 +12,65 @@ from .ood import freeze_record
 from .pipeline import analyze
 
 
-def _render(rep) -> str:
-    L = [f"Detected domains: {len(rep.domains)}"]
+def _cfg_thresholds(config=None):
+    c = Config.load(config)
+    return float(c.retrieval["distance_threshold"]), float(c.retrieval["margin_threshold"])
+
+
+def _render(rep, config=None) -> str:
+    d_tau, m_tau = _cfg_thresholds(config)
+    L = [str(rep.path), f"frame {rep.frame}", "", f"Detected domains: {len(rep.domains)}"]
     if not rep.domains:
-        L.append("\n  No condensed domain large enough to describe was found.")
-        L.append("  (Every particle may be gas, or the crystal may be below the size cut.)")
+        L += ["", "  No condensed domain large enough to describe was found.",
+              "  (Every particle may be gas, or the crystal may be below the size cut.)"]
         return "\n".join(L)
 
     for d in rep.domains:
-        L += ["", f"Domain {d.index}", "-" * 9,
-              f"Particles: {d.n_particles:,}",
-              f"SOAP centres: {d.n_centres:,}   L/S ratio: {d.ls_ratio}"]
+        L += ["", f"Domain {d.index}", "=" * 62,
+              f"  particles {d.n_particles:,}   SOAP centres {d.n_centres:,}   "
+              f"L/S ratio {d.ls_ratio}"]
         if d.ood is None:
-            L.append(f"Status: ERROR ({d.error})")
+            L.append(f"  ERROR: {d.error}")
             continue
-        L += [f"OOD score: {d.ood.score}   (tau = {d.ood.tau}, rho = {d.ood.rho})",
-              f"Status: {d.ood.status}"]
+
+        known = float(d.ood.rho) <= 1.0
+        L += ["",
+              f"  SEEN BEFORE      {'YES, in-distribution' if known else 'NO - novel'}",
+              f"                   OOD score {d.ood.score}   tau {d.ood.tau}   "
+              f"rho {d.ood.rho}   [{d.ood.status}]"]
+
         if d.retrieval is None:
-            L.append(f"Retrieval: unavailable ({d.error})")
+            L += ["", f"  IDENTIFIED AS    unavailable ({d.error})"]
             continue
-        L.append("")
-        L.append("Nearest CIF prototypes:")
-        for i, m in enumerate(d.retrieval.ranking, 1):
-            L.append(f"{i}. {m.prototype:<18s} distance={m.distance:.3f}")
-        L += ["", f"Retrieval: {d.retrieval.retrieved or 'none'}"
-                  f"   (margin {d.retrieval.margin})",
-              f"Verification: {d.retrieval.verification}"]
+
+        r = d.retrieval
+        best = r.ranking[0] if r.ranking else None
+        if r.retrieved:
+            L += ["", f"  IDENTIFIED AS    {r.retrieved}",
+                  f"                   distance {best.distance:.4f}   margin {r.margin}"]
+        elif best:
+            L += ["", "  IDENTIFIED AS    nothing in the library",
+                  f"                   closest was {best.prototype} at "
+                  f"{best.distance:.4f} (margin {r.margin})"]
+        L.append(f"  VERIFICATION     {r.verification}")
+
+        # The ranked guesses. Rank 1 is the answer; the ranks below it are what it beat,
+        # which is what tells you whether to trust it -- a rank 1 sitting just ahead of
+        # rank 2 means the library cannot separate those two on this domain, however
+        # small the absolute distance happens to be.
+        L += ["", "  RANKED GUESSES",
+              f"    {'#':>2s}  {'prototype':<20s} {'distance':>9s} {'vs #1':>7s}  verdict"]
+        for i, m in enumerate(r.ranking, 1):
+            rel = m.distance / max(best.distance, 1e-12)
+            if i == 1:
+                v = "best match" if r.retrieved else "best match (failed a gate)"
+            elif m.distance > d_tau:
+                v = "beyond accept range"
+            else:
+                v = "plausible alternative"
+            L.append(f"    {i:>2d}. {m.prototype:<20s} {m.distance:9.4f} {rel:6.2f}x  {v}")
+        L.append("        anchors: " + ", ".join(m.anchor for m in r.ranking[:3]))
+        L.append(f"        gates: distance <= {d_tau:.4f}, margin >= {m_tau:.2f}")
     return "\n".join(L)
 
 
@@ -66,7 +99,8 @@ def main(argv=None) -> int:
     a.add_argument("--config", type=Path, default=None)
     a.add_argument("--min-centres", type=int, default=64,
                    help="smallest describable domain (default 64)")
-    a.add_argument("--top-k", type=int, default=3)
+    a.add_argument("--top-k", type=int, default=5,
+                   help="how many ranked guesses to show (default 5)")
     a.add_argument("--json", action="store_true", help="machine-readable output")
 
     sub.add_parser("info", help="show the frozen model this build will use")
@@ -92,7 +126,8 @@ def main(argv=None) -> int:
         return 1
     rep = analyze(args.trajectory, frame=args.frame, config=Config.load(args.config),
                   min_centres=args.min_centres, top_k=args.top_k)
-    print(json.dumps(_as_dict(rep), indent=2) if args.json else _render(rep))
+    print(json.dumps(_as_dict(rep), indent=2) if args.json
+          else _render(rep, args.config))
     return 0
 
 

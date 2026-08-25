@@ -1,0 +1,12 @@
+anchor,prototype,n_LARGE,dispersion_LARGE,n_SMALL,dispersion_SMALL
+cscl,CsCl,600,0.23083,600,0.22446
+cscl_b2_anchor,CsCl,600,0.23157,600,0.22588
+cu3au_l12,Cu3Au,600,0.20163,600,0.23277
+cu3au_mp-2258_conventional_standard,Cu3Au,600,0.20632,600,0.23686
+fesi_b20,fesi_b20,600,0.23078,600,0.22348
+li3fe,Ni3Sn,600,0.18434,600,0.22093
+rocksalt_b1,rocksalt_B1,600,0.23397,600,0.23273
+th3p4__72406369,Th3P4,600,0.2282,600,0.22393
+th3p4__8edd1f72,Th3P4,600,0.21995,600,0.23041
+th3p4_anchor,Th3P4,600,0.22781,600,0.23413
+th3p4_mp-1347_primitive,Th3P4,600,0.21959,600,0.21916

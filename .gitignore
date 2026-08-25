@@ -152,3 +152,14 @@ opt/
 !DATA/*.py
 !DATA/*.csv
 !DATA/*.json
+
+# ---------------------------------------------------------------- matcher artifacts
+!crystal_discovery/crystal_stability/anchor_frames.json
+!crystal_discovery/crystal_stability/anchor_frame_selection.csv
+!pkg/verify_acceptance.csv
+!pkg/verify_acceptance.json
+
+# Re-assert the seal LAST. gitignore is last-match-wins, so this line must come after
+# every re-admission above -- otherwise a future `!.../*.csv` rule would silently
+# un-ignore the held-out candidate<->prototype mapping.
+crystal_discovery/crystal_stability/library_stability.csv
