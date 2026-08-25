@@ -89,17 +89,6 @@ Python >= 3.10 and six packages, all installed automatically by the command abov
 | `gsd` | reading HOOMD trajectories |
 | `numpy`, `scipy`, `pyyaml` | everything else |
 
-### Optional environment variables
-
-None are needed, and none meaningfully changes analysis speed. `OMP_NUM_THREADS` was
-measured and does **not** help: after the retrieval GEMMs were batched they are small
-enough that thread overhead exceeds the gain, and on a 4393-centre domain 8 threads was
-*slower* than 1 (0.47 s vs 0.37 s). Leave it alone.
-
-`OPENMM_PLUGIN_DIR` and the PACSim environment are **only** for *building* reference
-crystals from CIFs (see [Rebuilding](#rebuilding-the-reference-bank)). Analysis never
-touches OpenMM.
-
 ---
 
 ## Running it
@@ -138,7 +127,7 @@ always accounts for everything on disk.
 
 This is a separate entry point for a practical reason: importing dscribe costs ~30 s and
 analysing a trajectory costs ~2 s, so calling the CLI once per file would spend most of
-its life importing. `scan` pays it once.
+time importing. `scan` pays it once.
 
 A frame containing several separate crystals is split into domains and each is analysed
 independently — scoring them together averages away the thing you are looking for.
