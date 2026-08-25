@@ -162,6 +162,10 @@ opt/
 !pkg/examples/
 !pkg/examples/*.sh
 
+# A user bank is local to whoever made it and must never ship: it would silently change
+# the library the published thresholds were calibrated against.
+pkg/references/user_bank.npz
+
 # Re-assert the seal LAST. gitignore is last-match-wins, so this line must come after
 # every re-admission above -- otherwise a future `!.../*.csv` rule would silently
 # un-ignore the held-out candidate<->prototype mapping.

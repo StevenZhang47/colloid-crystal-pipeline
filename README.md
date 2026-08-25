@@ -82,8 +82,36 @@ crystal-discovery analyze traj.gsd                 # last frame
 crystal-discovery analyze traj.gsd --frame 250     # a specific frame
 crystal-discovery analyze traj.gsd --top-k 10      # more ranked guesses
 crystal-discovery analyze traj.gsd --json          # machine-readable
+crystal-discovery scan DIR -o results.csv          # every .gsd under a folder
+crystal-discovery add-reference s.gsd --name X     # extend the matcher library
 crystal-discovery info                             # the frozen model this build uses
 ```
+
+### Scanning a folder
+
+```bash
+crystal-discovery scan /data/runs -o results.csv
+```
+
+```
+[1/3] ideal_cscl.gsd                 1dom  NOVEL  CsCl
+[2/3] steven_example_1.gsd           1dom  NOVEL  Ni3Sn
+[3/3] steven_example_2.gsd           1dom  NOVEL  Cu3Au
+
+  files scanned      3        identified as:
+  novel (rho > 1)    3          CsCl     1
+  identified         3          Ni3Sn    1
+  no match           0          Cu3Au    1
+```
+
+Recursive by default (`--no-recursive` to stay flat, `--pattern` to change the glob). The
+CSV carries one row per **domain**, not per file, since a frame can hold several separate
+crystals. Files that fail are written with the reason rather than dropped, so the row count
+always accounts for everything on disk.
+
+This is a separate entry point for a practical reason: importing dscribe costs ~30 s and
+analysing a trajectory costs ~2 s, so calling the CLI once per file would spend most of
+its life importing. `scan` pays it once.
 
 A frame containing several separate crystals is split into domains and each is analysed
 independently — scoring them together averages away the thing you are looking for.
@@ -312,6 +340,61 @@ reimplementing it, because coordinate descent is not convex and a copy that seed
 differently lands in a different minimum.
 
 ---
+
+## Extending it
+
+### Adding a structure to the matcher library
+
+```bash
+crystal-discovery add-reference my_structure.gsd --name MyPhase
+```
+
+It extracts SOAP environments from the largest domain, dedupes them with the same greedy
+cover the shipped bank uses, and appends. No PACSim and no GPU — any GSD of a well-ordered
+structure will do.
+
+Additions go to a **separate** `references/user_bank.npz` that layers on at load time. The
+shipped 41-anchor artifact keeps its checksum, `verify_acceptance.py` still reproduces the
+published numbers, and any addition is undone by deleting one file.
+
+**It refuses collisions**, and this is the point of the command rather than a nicety:
+
+```
+refused: the new structure MATCHES the existing prototype 'CsCl' at D=0.0000 <= 0.1619,
+but you called it 'my_new_phase'. By this pipeline's own criterion they are the same
+structure, so adding it creates two prototypes that cannot be told apart and every future
+match against either fails the margin gate. If they really are the same, pass
+--prototype CsCl to add it as another cell setting.
+```
+
+The margin gate is a *ratio* between rank 1 and rank 2, so inserting a structural
+neighbour of an existing prototype depresses rank 2 for everything near it. That is not
+hypothetical: when the library was expanded, Al3Ti (D0_22) landed inside the acceptance
+cutoff and a Cu3Au crystal was confidently identified as Al3Ti in 6 of 6 frames. The
+command also warns, without refusing, when a new anchor lands within a factor 2.45 of
+anything already present, and tells you to re-run the acceptance test.
+
+Adding another **cell setting** of a prototype already present is allowed and expected —
+Th3P4 ships with four. Pass `--prototype <existing>`; retrieval collapses settings of one
+prototype before the margin test, so they never compete with each other.
+
+### Adding to the detector atlas
+
+There is deliberately no command for this. The detector is not a list to append to; it is
+a Gaussian fitted over 380 trajectories in 103 condition groups, and extending it means:
+
+1. new trajectories **with condition-group ids** — the split unit is the group, not the
+   trajectory, because seeds within a group are near-copies and splitting by trajectory
+   leaks between roles
+2. refitting species scaling, PCA16 and the Ledoit-Wolf covariance on the train split
+3. **re-deriving tau**; `6.715183` does not carry over
+4. re-measuring the false-positive rate on validation
+5. a new freeze record and sha256 — every number quoted here becomes stale
+6. and the sealed 24-trajectory test is **single use**. Opening it to check a retrained
+   model spends it, permanently
+
+The scripts are in `results/motif_pipeline/core3_atlas_v3/scripts/` and `DATA/README.md`
+documents the split protocol. It is a reviewable procedure, not a flag.
 
 ## Limitations
 

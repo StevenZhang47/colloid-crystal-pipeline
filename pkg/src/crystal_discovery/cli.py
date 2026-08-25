@@ -103,6 +103,30 @@ def main(argv=None) -> int:
                    help="how many ranked guesses to show (default 5)")
     a.add_argument("--json", action="store_true", help="machine-readable output")
 
+    sc = sub.add_parser("scan", help="analyse every trajectory under a directory")
+    sc.add_argument("directory", type=Path)
+    sc.add_argument("-o", "--out", type=Path, default=None, help="CSV to write")
+    sc.add_argument("--frame", type=int, default=-1)
+    sc.add_argument("--pattern", default="*.gsd")
+    sc.add_argument("--no-recursive", action="store_true")
+    sc.add_argument("--min-centres", type=int, default=64)
+    sc.add_argument("--top-k", type=int, default=5)
+    sc.add_argument("--config", type=Path, default=None)
+    sc.add_argument("--quiet", action="store_true")
+
+    ar = sub.add_parser("add-reference",
+                        help="add a structure to the MATCHER library (not the detector)")
+    ar.add_argument("trajectory", type=Path)
+    ar.add_argument("--name", required=True, help="anchor name, must be unique")
+    ar.add_argument("--prototype", default=None,
+                    help="prototype it belongs to (default: same as --name). Give an "
+                         "existing prototype to add another cell setting of it.")
+    ar.add_argument("--frame", type=int, default=0)
+    ar.add_argument("--min-centres", type=int, default=64)
+    ar.add_argument("--bank", type=Path, default=None)
+    ar.add_argument("--force", action="store_true",
+                    help="add even if it matches an existing prototype")
+
     sub.add_parser("info", help="show the frozen model this build will use")
 
     args = ap.parse_args(argv)
@@ -119,6 +143,31 @@ def main(argv=None) -> int:
         print("\nknown limitations:")
         for lim in rec.get("known_limitations", []):
             print(f"  - {lim}")
+        return 0
+
+    if args.command == "scan":
+        from .batch import scan
+        if not args.directory.exists():
+            print(f"no such directory: {args.directory}", file=sys.stderr)
+            return 1
+        rows = scan(args.directory, out_csv=args.out, frame=args.frame,
+                    config=Config.load(args.config), min_centres=args.min_centres,
+                    top_k=args.top_k, pattern=args.pattern,
+                    recursive=not args.no_recursive, quiet=args.quiet)
+        return 0 if rows else 1
+
+    if args.command == "add-reference":
+        from .addref import add_reference
+        if not args.trajectory.is_file():
+            print(f"no such file: {args.trajectory}", file=sys.stderr)
+            return 1
+        try:
+            add_reference(args.trajectory, name=args.name, prototype=args.prototype,
+                          frame=args.frame, min_centres=args.min_centres,
+                          bank_path=args.bank, force=args.force)
+        except ValueError as exc:
+            print(f"refused: {exc}", file=sys.stderr)
+            return 1
         return 0
 
     if not args.trajectory.is_file():

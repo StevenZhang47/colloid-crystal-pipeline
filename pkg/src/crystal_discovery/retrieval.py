@@ -53,6 +53,9 @@ import numpy as np
 
 _REFS = Path(__file__).resolve().parents[2] / "references"
 CHAMFER_BANK = _REFS / "chamfer_bank.npz"
+# User additions live in a SEPARATE file layered on at load time, so the shipped artifact
+# keeps its checksum and an addition can be undone by deleting one file.
+USER_BANK = _REFS / "user_bank.npz"
 MEAN_BANK = _REFS / "prototype_fingerprints.npz"
 MIN_CENTRES_PER_SPECIES = 25
 
@@ -79,15 +82,20 @@ def load_bank(path: str | None = None) -> dict:
     if not p.is_file():
         raise FileNotFoundError(
             f"chamfer bank not found: {p}\nBuild it with pkg/build_chamfer_bank.py")
-    z = np.load(p, allow_pickle=False)
-    meta = json.loads(bytes(z["__meta__"]).decode())
     envs: dict[str, list] = {}
-    for k in z.files:
-        if k == "__meta__":
-            continue
-        name, s = k.rsplit("::", 1)
-        envs.setdefault(name, [None, None])[int(s)] = z[k].astype(np.float32)
-    proto = {m["anchor"]: m["prototype"] for m in meta["anchors"]}
+    proto: dict[str, str] = {}
+    meta = {"anchors": []}
+    sources = [p] + ([USER_BANK] if (path is None and USER_BANK.is_file()) else [])
+    for src in sources:
+        z = np.load(src, allow_pickle=False)
+        m = json.loads(bytes(z["__meta__"]).decode())
+        meta["anchors"] += [{**a, "bank": src.name} for a in m["anchors"]]
+        for k in z.files:
+            if k == "__meta__":
+                continue
+            name, si = k.rsplit("::", 1)
+            envs.setdefault(name, [None, None])[int(si)] = z[k].astype(np.float32)
+        proto.update({a["anchor"]: a["prototype"] for a in m["anchors"]})
 
     # Stack every anchor's environments into ONE matrix per species, remembering where
     # each anchor's block starts. Scoring is then two large matrix products instead of
