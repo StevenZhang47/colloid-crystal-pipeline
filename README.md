@@ -62,12 +62,10 @@ Python >= 3.10 and six packages, all installed automatically by the command abov
 
 ### Optional environment variables
 
-None are needed. Two are worth knowing:
-
-```bash
-export OMP_NUM_THREADS=8      # BLAS threads. Retrieval is two large matrix products,
-                              # so this is the one knob that changes analysis speed.
-```
+None are needed, and none meaningfully changes analysis speed. `OMP_NUM_THREADS` was
+measured and does **not** help: after the retrieval GEMMs were batched they are small
+enough that thread overhead exceeds the gain, and on a 4393-centre domain 8 threads was
+*slower* than 1 (0.47 s vs 0.37 s). Leave it alone.
 
 `OPENMM_PLUGIN_DIR` and the PACSim environment are **only** for *building* reference
 crystals from CIFs (see [Rebuilding](#rebuilding-the-reference-bank)). Analysis never
@@ -119,9 +117,16 @@ independently — scoring them together averages away the thing you are looking 
 ### Speed
 
 ```
-cold start           ~30-45 s     dominated by `import dscribe` (pulls in ase); ONCE
-per trajectory         ~2 s       read + preprocess + SOAP + detect + rank
+one-time                    ~17 s        dscribe/ase import, then the model and bank
+per file thereafter      0.3 - 3 s       scales with the number of SOAP centres
+   read + preprocess + SOAP   0.3 - 2.7 s     <- the bottleneck
+   OOD score                 0.01 - 0.09 s
+   retrieval                 0.02 - 0.47 s
 ```
+
+`dscribe` is imported lazily, on the first `find_domains` call rather than at module
+import, so the one-time cost lands on the first file rather than at startup. A scan of
+100 trajectories is roughly 17 s + 100 s.
 
 The startup cost dominates, so for batch work drive the library from one Python process
 rather than invoking the CLI once per file:
