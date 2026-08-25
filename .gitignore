@@ -159,6 +159,9 @@ opt/
 !pkg/verify_acceptance.csv
 !pkg/verify_acceptance.json
 
+!pkg/examples/
+!pkg/examples/*.sh
+
 # Re-assert the seal LAST. gitignore is last-match-wins, so this line must come after
 # every re-admission above -- otherwise a future `!.../*.csv` rule would silently
 # un-ignore the held-out candidate<->prototype mapping.
