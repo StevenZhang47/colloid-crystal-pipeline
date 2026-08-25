@@ -38,16 +38,50 @@ Those are different questions, asked by different machinery, and they are allowe
 
 ## Install
 
+**Use an isolated environment.** Two of the dependencies — `dscribe` and `freud` — are
+compiled extensions. Conda-forge ships them as prebuilt binaries; from PyPI they may build
+from source, which needs a C++ toolchain and is where most fresh-machine installs fail.
+Installing into system Python is asking for trouble either way.
+
 ```bash
 git clone git@github.com:StevenZhang47/colloid-crystal-pipeline.git
 cd colloid-crystal-pipeline
-python -m pip install -e pkg
+
+# recommended: conda (prebuilt binaries, no compiler needed)
+conda env create -f pkg/environment.yml
+conda activate crystal-discovery
+
 crystal-discovery analyze /path/to/your/trajectory.gsd
 ```
 
-That is the entire setup. **No environment variables are required and nothing needs
-downloading** — the frozen detector and the 17 MB reference bank travel with the
-repository. A fresh clone is 37 MB and works immediately.
+<details>
+<summary>venv instead of conda</summary>
+
+Works if you have a C++ toolchain, or if wheels exist for your platform:
+
+```bash
+python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -e pkg
+```
+
+If `dscribe` or `freud-analysis` fails to build, use the conda route instead rather than
+fighting the compiler.
+</details>
+
+Beyond that there is nothing to set up: **no environment variables are required and
+nothing needs downloading** — the frozen detector and the 17 MB reference bank travel with
+the repository. A fresh clone is 37 MB and works immediately.
+
+### What your GSD file needs
+
+```
+particles.position    particles.diameter    particles.typeid    configuration.box
+```
+
+Two particle species, distinguished by diameter. No `run.yaml` or metadata alongside the
+file is needed — the production `GLOBAL_D0` descriptor normalises by `d0`, the median
+nearest-neighbour distance, so it never reads a brush length.
 
 ### Requirements
 

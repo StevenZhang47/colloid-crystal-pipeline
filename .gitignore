@@ -162,6 +162,8 @@ opt/
 !pkg/examples/
 !pkg/examples/*.sh
 
+!pkg/environment.yml
+
 # A user bank is local to whoever made it and must never ship: it would silently change
 # the library the published thresholds were calibrated against.
 pkg/references/user_bank.npz

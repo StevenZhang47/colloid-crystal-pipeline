@@ -1,0 +1,21 @@
+# conda env create -f pkg/environment.yml && conda activate crystal-discovery
+#
+# Conda rather than bare pip because dscribe and freud are COMPILED extensions. On
+# conda-forge they arrive as prebuilt binaries; from PyPI they may be built from source,
+# which needs a C++ toolchain and is where most fresh-machine installs fail.
+name: crystal-discovery
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy>=1.24
+  - scipy>=1.10
+  - pyyaml>=6.0
+  - gsd>=3.0
+  - freud>=3.0          # conda-forge calls it `freud`; on PyPI it is `freud-analysis`
+  - dscribe>=2.0
+  - ase                 # pulled in by dscribe; named here so the solve is explicit
+  - pandas              # only for the verification and research scripts, not the CLI
+  - pip
+  - pip:
+      - -e ../pkg
