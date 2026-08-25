@@ -41,7 +41,6 @@ opt/
 # ---------------------------------------------------------------- admitted: root docs
 !.gitignore
 !README.md
-!AI_AGENT.md
 
 # ---------------------------------------------------------------- CIF library
 !crystal_discovery/
@@ -108,13 +107,6 @@ opt/
 !results/final_architecture_decision_v1/
 !results/final_architecture_decision_v1/*.md
 !results/final_architecture_decision_v1/*.txt
-
-# ---------------------------------------------------------------- manuscript
-!manuscript/
-!manuscript/**/
-!manuscript/**/*.tex
-!manuscript/**/*.md
-!manuscript/**/*.bib
 
 # ---------------------------------------------------------------- FROZEN detector
 # The .npz rule above excludes caches; these two are the shipped inference artifacts

@@ -332,7 +332,6 @@ noise, which is what approaching a phase boundary looks like.
 | `results/motif_pipeline/core3_atlas_v3/` | detection atlas and the frozen OOD model |
 | `results/statistical_ood_benchmark_v2/.../` | matcher benchmarks and the acceptance test |
 | `DATA/` | every dataset, path and split, machine-readable |
-| `manuscript/` | LaTeX draft |
 
 **Nothing is reimplemented.** `pkg` delegates preprocessing and SOAP to the frozen modules
 that produced the frozen model, rather than carrying a second copy. A second
