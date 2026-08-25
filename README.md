@@ -29,9 +29,9 @@ Domain 0
         gates: distance <= 0.1619, margin >= 2.45
 ```
 
-That output is the whole idea: the detector has **never seen this structure**, and the
-matcher says it is **Ni3Sn** anyway. Those are different questions, asked by different
-machinery, and they are allowed to disagree. "Novel" means *not in the training atlas*;
+The detector has **never seen this structure**, and the matcher says it is **Ni3Sn**. 
+Those are different questions, asked by different machinery, and they are allowed to disagree. 
+"Novel" means *not in the training atlas*;
 "Ni3Sn" means *this is what it looks like*. A structure can be both.
 
 ---
@@ -47,7 +47,7 @@ crystal-discovery analyze /path/to/your/trajectory.gsd
 
 That is the entire setup. **No environment variables are required and nothing needs
 downloading** — the frozen detector and the 17 MB reference bank travel with the
-repository. A fresh clone is 37 MB and works immediately; this is tested, not assumed.
+repository. A fresh clone is 37 MB and works immediately.
 
 ### Requirements
 
