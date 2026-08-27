@@ -20,7 +20,11 @@ from ase import Atoms
 from dscribe.descriptors import SOAP
 from scipy.spatial import cKDTree
 
-ROOT = Path("/projects/rps/gmh4/hockygroup/sz5808")
+# Resolved relative to this file so a clone works from any location; the absolute cluster
+# path stays as a fallback. Path resolution only -- no frozen constant is touched.
+ROOT = Path(__file__).resolve().parents[4]
+if not (ROOT / "results/motif_pipeline").is_dir():
+    ROOT = Path("/projects/rps/gmh4/hockygroup/sz5808")
 FROZEN = ROOT / "results/motif_pipeline/frozen_gas_m3_pipeline_v1"
 sys.path.insert(0, str(FROZEN))
 import gas_m3_pipeline as M3

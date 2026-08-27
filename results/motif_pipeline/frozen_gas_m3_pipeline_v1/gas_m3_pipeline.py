@@ -29,8 +29,17 @@ import numpy as np
 from scipy.spatial import cKDTree
 
 # ---- frozen gas screen (imported, not reimplemented) ----
-_GS = Path("/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/preprocessing_pipeline_final/"
-           "unified_pipeline/scripts/gas_screen_v1")
+# Resolved RELATIVE to this file so a clone works from any location. It used to be the
+# absolute cluster path, which meant `crystal-discovery analyze` died with
+# ModuleNotFoundError on every machine that was not the cluster. The old path is kept as
+# a fallback for trees where this module sits outside the repository layout.
+# Path resolution only -- no frozen constant is touched.
+_REPO = Path(__file__).resolve().parents[3]
+_GS = _REPO / ("crystal_discovery/preprocessing_pipeline_final/unified_pipeline"
+               "/scripts/gas_screen_v1")
+if not _GS.is_dir():
+    _GS = Path("/projects/rps/gmh4/hockygroup/sz5808/crystal_discovery/"
+               "preprocessing_pipeline_final/unified_pipeline/scripts/gas_screen_v1")
 sys.path.insert(0, str(_GS))
 import radius_normalized_coord_r4_gas_screen as GAS   # frozen constants live inside
 
@@ -167,7 +176,9 @@ def run(positions, diameters, box=None, type_ids=None):
 # ------------------------------------------------------------------ self-test
 def _selftest():
     """Reproduce the validated M3 removed-counts on benchmark crystallites (isolated clusters)."""
-    MP = Path("/projects/rps/gmh4/hockygroup/sz5808/results/motif_pipeline")
+    MP = _REPO / "results/motif_pipeline"
+    if not MP.is_dir():
+        MP = Path("/projects/rps/gmh4/hockygroup/sz5808/results/motif_pipeline")
     sys.path.insert(0, str(MP / "domain_surface_method_benchmark_v1" / "scripts"))
     import io_frames as IO
     import pandas as pd
