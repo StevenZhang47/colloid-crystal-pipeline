@@ -2,7 +2,7 @@
 """
 SIZE-INVARIANT COHERENT STRUCTURE FACTOR.
 
-Replaces `sk_of()` in build_and_run_v2.py, which carried an N-dependent size artifact of
+Replaces `sk_of()` in the removed build_and_run_v2.py, which carried an N-dependent size artifact of
 exactly the same class as the original raw-pair-count "RDF" defect.
 
 THREE SEPARATE BUGS WERE FOUND, NOT ONE

@@ -56,7 +56,6 @@ CHAMFER_BANK = _REFS / "chamfer_bank.npz"
 # User additions live in a SEPARATE file layered on at load time, so the shipped artifact
 # keeps its checksum and an addition can be undone by deleting one file.
 USER_BANK = _REFS / "user_bank.npz"
-MEAN_BANK = _REFS / "prototype_fingerprints.npz"
 MIN_CENTRES_PER_SPECIES = 25
 
 

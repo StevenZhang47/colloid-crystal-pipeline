@@ -8,7 +8,12 @@ and resubmit. Nothing else needs to be touched.
 
 ## Layout
 
-    structures/       CIFs. CsCl.cif, Th3P4.cif.
+    structures/       CIFs that design.py and build.py read by default.
+                      Every file here is byte-identical to one in
+                      ../cif_library/prototypes/, but two differ in NAME
+                      (Th3P4.cif = Th3P4__8edd1f72.cif, zangenite.cif =
+                      zangenite__98bb84a4.cif). Kept as the build path's own
+                      input directory; the library is the deduplicated one.
     systems/          One YAML per crystal. THIS IS THE ONLY FILE YOU EDIT.
     build.py          systems/<x>.yaml -> runs/<x>/{configuration.yaml, run.yaml, <x>.cif}
     env.sh            conda activate + the OPENMM_PLUGIN_DIR fix (see below)

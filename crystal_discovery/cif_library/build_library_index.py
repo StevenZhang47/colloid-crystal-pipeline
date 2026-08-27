@@ -6,7 +6,7 @@ The pieces live in four places and nothing joined them:
   ../crystal_stability/runs/lib_<slug>/          the built colloidal crystal
   generated/records/<slug>.json                  how the build went
   catalog.csv                                    crystallography
-  ../../pkg/references/prototype_fingerprints.npz  what the matcher actually retrieves against
+  ../../pkg/references/chamfer_bank.npz          what the matcher actually retrieves against
 
 `usable` is the column that matters: a CIF can be present and still be unusable, either
 because it cannot be parsed (coincident sites, placeholder species labels) or because the
@@ -23,7 +23,7 @@ import pandas as pd
 
 LIB = Path(__file__).resolve().parent
 CS = LIB.parent / "crystal_stability"
-BANK = LIB.parents[1] / "pkg/references/prototype_fingerprints.npz"
+BANK = LIB.parents[1] / "pkg/references/chamfer_bank.npz"
 
 
 def main():
@@ -36,11 +36,15 @@ def main():
     # collapses every FCC superstructure onto plain FCC: it declares CsCl, Cu3Au, Al3Ti,
     # BiF3, CuAu and NaTl to be one prototype. Grouping Cu3Au with Al3Ti would erase the
     # single hardest discrimination in this library.
+    # The chamfer bank carries its anchor list in a JSON __meta__ array rather than as
+    # parallel name/prototype arrays, because it stores a variable number of environments
+    # per anchor rather than one fixed-width fingerprint each.
     in_bank, groups = set(), {}
     if BANK.is_file():
         z = np.load(BANK, allow_pickle=False)
-        in_bank = {str(s) for s in z["names"]}
-        groups = {str(a).lower(): str(b) for a, b in zip(z["names"], z["prototypes"])}
+        meta = json.loads(bytes(z["__meta__"]).decode())
+        in_bank = {m["anchor"] for m in meta["anchors"]}
+        groups = {m["anchor"].lower(): m["prototype"] for m in meta["anchors"]}
 
     rows = []
     for c in cat.itertuples(index=False):

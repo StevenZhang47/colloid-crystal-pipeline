@@ -77,3 +77,34 @@ def find_domains(gsd_path, frame_index: int = -1, min_centres: int = 64) -> list
             n_centres=len(centres), n_large=n_l, n_small=n_s,
             ls_ratio=round(n_l / max(n_s, 1), 3), soap=v, species=sp))
     return out
+
+
+def anchor_environments(gsd_path, frame_index: int = 0) -> list:
+    """Per-particle SOAP of a CIF-ideal anchor, split by species. No preprocessing.
+
+    Anchors are built lattices: there is no gas in them and no thermal disorder, so the
+    gas screen has nothing to find and every particle it removes is a false positive. It
+    removes a lot -- on an ideal ReO3 anchor the frozen screen deleted the entire majority
+    sublattice (5324 particles in, 1330 out), because it assumes ~4 near contacts.
+
+    Candidates ARE screened, and that asymmetry was tested rather than assumed: removing
+    candidate preprocessing made every matcher worse, taking the mean-SOAP method from 0
+    to 26 of 26 amorphous domains leaking through.
+
+    Returns [LARGE (n_l, 952), SMALL (n_s, 952)], each L2-normalised.
+    """
+    P = _core()
+    frame = P.read_frame(Path(gsd_path), frame_index)
+    n = len(frame.positions)
+    M3 = sys.modules["gas_m3_pipeline"]
+    prep = M3.PipelineResult(
+        n=n, retain_mask=np.ones(n, bool), component_id=np.zeros(n, int),
+        same_coord=np.zeros(n, float), exposure=np.zeros(n, float),
+        excluded_as_surface=np.zeros(n, bool), is_soap_center=np.ones(n, bool),
+        canonical_species_id=M3._canonical_species(frame.diameters, frame.type_ids, n),
+        gas_result=None)
+    res = P.soap_global_d0(frame, prep, centers=np.arange(n))
+    v = res.vectors
+    v = v / np.clip(np.linalg.norm(v, axis=1, keepdims=True), 1e-12, None)
+    sp = prep.canonical_species_id[res.particle_indices]
+    return [v[sp == 0], v[sp == 1]]
